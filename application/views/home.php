@@ -15,7 +15,6 @@
                         <div class="row ">
                             <div class="well col-md-4 col-md-offset-4">
                                 Welcome, {name}
-                                >>>>{bg_name}
                             </div>
                         </div>
 

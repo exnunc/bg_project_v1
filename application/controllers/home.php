@@ -16,14 +16,13 @@ class Home extends CI_Controller {
 
     public function index() {
         $name = $this->login_model->get_name_by_username();
-        $bg_name = $this->boardgame_model->get_name_by_id(2);
 
         $data = array(
             'test' => 'asdasda',
             'base_url' => base_url(),
             'v' => 'home',
             'name' => $name,
-            'bg_name' => $bg_name
+            
         );
 
         if ($this->check_session->check()) {
@@ -31,10 +30,16 @@ class Home extends CI_Controller {
             $data['featured'] = $this->parser->parse('templates/featured', array(), true);
             $data['top5'] = $this->parser->parse('templates/top5', array(), true);
             $data['browse'] = $this->parser->parse('templates/browse', array(), true);
+            $data['admin_dropdown'] = ' ';
             $this->parser->parse('template', $data);
         }
         else
             redirect('login');
+    }
+    
+    public function boardgames(){
+        $bg = $this->boardgame_model->get_boardgames();
+        echo json_encode($bg);
     }
 
 }
