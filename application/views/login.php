@@ -11,12 +11,12 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="start">
-                        <div class="row md-col-6 pull-right">
-                            <div class="md-col-6 well">
+                        <div class="row ">
+                            <div class="well col-md-4 col-md-offset-4">
                                 {error}
                                 {form_open}
                                 <input type="text" id="user-name" name="username" placeholder="Username" class="form-control login"/>
-                                <input type="password" id="password" name="pass" placeholder="Password" class="form-control login"/>
+                                <input type="password" id="password" name="password" placeholder="Password" class="form-control login"/>
                                 <input type="submit" name="submit" id="submit" class="btn btn-default"/>
                                 {form_close}
                             </div>
