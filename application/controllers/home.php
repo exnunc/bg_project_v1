@@ -5,6 +5,7 @@ class Home extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('login_model');
+        $this->load->model('boardgame_model');
         $this->load->library('parser');
         $this->load->library('check_session');
 
@@ -15,11 +16,14 @@ class Home extends CI_Controller {
 
     public function index() {
         $name = $this->login_model->get_name_by_username();
+        $bg_name = $this->boardgame_model->get_name_by_id(2);
+
         $data = array(
             'test' => 'asdasda',
             'base_url' => base_url(),
             'v' => 'home',
-            'name' => $name
+            'name' => $name,
+            'bg_name' => $bg_name
         );
 
         if ($this->check_session->check()) {
