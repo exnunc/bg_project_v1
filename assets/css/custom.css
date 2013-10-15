@@ -1,3 +1,7 @@
+.panes-container{
+    margin-top:100px;
+}
+
 /* custom inclusion of right, left and below tabs */
 
 .tabs-below > .nav-tabs,

@@ -41,12 +41,15 @@ class Login extends CI_Controller {
                 }
             } else {
                 $data['error'] = $this->parser->parse('templates/error', array(), true);
+                
             }
         }
 
-        //$this->parser->parse('login', $data);
         $data['v'] = 'login';
+        $data['featured'] = $this->parser->parse('templates/featured', array(), true);
+        $data['top5'] = $this->parser->parse('templates/top5', array(), true);
         $this->parser->parse('template', $data);
+        
     }
 
     public function set_session($user) {

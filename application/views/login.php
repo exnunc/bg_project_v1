@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="row">
-        <br><br><br><br><br>
+    <div class="row panes-container">
+        
         <div class="col-md-12">          	
             <!-- tabs left -->
             <div class="tabbable tabs-left">
@@ -23,12 +23,8 @@
                         </div>
 
                     </div>
-                    <div class="tab-pane" id="featured">Secondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-                        Aliquam in felis sit amet augue.
-                    </div>
-                    <div class="tab-pane" id="top5">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-                        Quisque mauris augue, molestie tincidunt condimentum vitae. 
-                    </div>
+                    {featured}
+                    {top5}
                 </div>
             </div>
             <!-- /tabs -->
