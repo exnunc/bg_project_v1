@@ -1,8 +1,11 @@
 $(document).ready(function() {
     $('#search-field .typeahead').typeahead({
-        name: 'boardgames',
-        prefetch: '../data/countries.json',
-        limit: 10
+        source: function(query, process) {
+            return $.get('/typeahead', {query: query}, function(data) {
+                return process(data.options);
+            });
+        }
+
     });
 
 });
