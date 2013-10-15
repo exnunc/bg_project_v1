@@ -12,12 +12,14 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
+
         <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
                 <input id="search-field" type="text" class="form-control typeahead" placeholder="Search">
             </div>
             <span type="submit" class="btn btn-default">GO</span>
         </form>
+      
 
         <ul class="nav navbar-nav navbar-right">
             {admin_dropdown}
