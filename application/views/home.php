@@ -15,13 +15,7 @@
                         <div class="row ">
                             <div class="well col-md-4 col-md-offset-4">
                                 Welcome, {name}
-<<<<<<< HEAD
-                                >>>>{bg_name}
-                                {r_user}
-                                    <p>{review_content}</p>
-                                {/r_user}
-=======
->>>>>>> 797f7c18ede07cacd0dd9fa4811e4c68597ae380
+
                             </div>
                         </div>
 
