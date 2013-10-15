@@ -6,6 +6,7 @@ class Home extends CI_Controller {
         parent::__construct();
         $this->load->model('login_model');
         $this->load->model('boardgame_model');
+        $this->load->model('review_model');
         $this->load->library('parser');
         $this->load->library('check_session');
 
@@ -17,13 +18,18 @@ class Home extends CI_Controller {
     public function index() {
         $name = $this->login_model->get_name_by_username();
         $bg_name = $this->boardgame_model->get_name_by_id(2);
+        $reviews_user = $this->review_model->get_reviews_by_user_id(1);
+        $reviews_bg = $this->review_model->get_reviews_by_bg_id(2);
 
         $data = array(
             'test' => 'asdasda',
             'base_url' => base_url(),
             'v' => 'home',
             'name' => $name,
-            'bg_name' => $bg_name
+            'bg_name' => $bg_name,
+                'r_user'=>$reviews_user,
+            'r_bg'=>$reviews_bg
+            
         );
 
         if ($this->check_session->check()) {

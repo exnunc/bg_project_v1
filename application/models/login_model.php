@@ -28,10 +28,13 @@ class Login_model extends CI_Model{
     
      public function get_name_by_username() {
         $query = $this->db->get_where('users', array('user_username' => $this->session->userdata('u')));
-        return $query->row()->user_name;
-       
+        return $query->row()->user_name; 
     }
     
+    public function get_id_by_username(){
+        $query = $this->db->get_where('users', array('user_username' => $this->session->userdata('u')));
+        return $query->row()->user_id;
+    }
 }
 
 ?>
