@@ -29,7 +29,7 @@ class Boardgame_model extends CI_Model {
         $query = $this->db->get_where('boardgames', array('bg_id' => $id));
         return $query->row()->bg_name;
     }
-
+    
 }
 
 ?>
