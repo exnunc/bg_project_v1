@@ -20,12 +20,15 @@ class Game extends CI_Controller {
 
     public function index() {
         $bg = $this->boardgame_model->get_boardgames($this->session->userdata('gameId'));
-        
+        $reviews = $this->review_model->get_reviews_by_bg_id($this->session->userdata('gameId'));
         $data = array(
             'test' => 'asdasda',
             'base_url' => base_url(),
             'v' => 'game_page',
-            'test' => $bg['bg_name']
+            'bg_name' => $bg['bg_name'],
+            'bg_description' => $bg['bg_description'],
+            'bg_path'=> base_url().'assets/img/'.$bg['bg_image'],
+            'reviews' => $reviews
         );
         
         if ($this->check_session->check()) {
