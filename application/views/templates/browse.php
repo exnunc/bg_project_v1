@@ -1,3 +1,4 @@
+
 <div class="tab-pane" id="browse">
    <!-- Single button -->
     <div class="btn-group">
@@ -18,8 +19,8 @@
         <!--<img class="media-object" src="..." alt="...">-->
         </a>
         <div class="media-body">
-        <h4 class="media-heading">{bg_name}</h4>
-            <p>{bg_description}</p>
+        <h4 class="media-heading">{bgames_cat['bg_name']}</h4>
+            <p>{bgames_cat['bg_description']}</p>
         </div>
     
    </div>
