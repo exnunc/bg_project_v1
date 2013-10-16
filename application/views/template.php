@@ -1,7 +1,7 @@
 <?php
 
-$this->load->view('templates/header.php');
+$this->load->view('components/header.php');
 $this->load->view($v);
-$this->load->view('templates/footer.php');
+$this->load->view('components/footer.php');
 
 ?>
