@@ -27,7 +27,6 @@ class Login extends CI_Controller {
 
         if ($this->check_session->check()) {
             redirect('home');
-            
         } elseif ($this->input->post('submit')) {
             if ($this->input->post('username') !== '' && $this->input->post('password') !== '') {
                 $username = $this->input->post('username');
@@ -41,7 +40,6 @@ class Login extends CI_Controller {
                 }
             } else {
                 $data['error'] = $this->parser->parse('components/error', array(), true);
-                
             }
         }
 
@@ -49,7 +47,6 @@ class Login extends CI_Controller {
         $data['featured'] = $this->parser->parse('components/featured', array(), true);
         $data['top5'] = $this->parser->parse('components/top5', array(), true);
         $this->parser->parse('template', $data);
-        
     }
 
     public function set_session($user) {
@@ -60,6 +57,8 @@ class Login extends CI_Controller {
 
         $this->session->set_userdata($sesData);
     }
+
+   
 
 }
 

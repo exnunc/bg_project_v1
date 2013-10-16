@@ -1,6 +1,32 @@
 $(document).ready(function() {
 
     var boardgames = ajaxCall('home/boardgames');
+
+    typeaheadForSearch();
+    $('#logout-btn').bind('click', signOut);
+
+
+
+
+});
+
+
+var signOut = function() {
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        async: false,
+        cache: false,
+        url: 'home/logout',
+        success: function(response) {
+            if (response) {
+                window.location = response.redirect;
+            }
+        }
+    });
+};
+
+var typeaheadForSearch = function() {
     $('#search-field').typeahead([{
             valueKey: 'name',
             prefetch: {
@@ -30,11 +56,7 @@ $(document).ready(function() {
                 }
             }
         });
-        
+
 
     });
-
-
-
-});
-
+};

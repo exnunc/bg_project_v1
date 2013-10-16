@@ -30,7 +30,7 @@
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
                     <li class="divider"></li>
-                    <li><a href="#">Logout</a></li>
+                    <li id="logout-btn"><a>Logout</a></li>
                 </ul>
             </li>
         </ul>

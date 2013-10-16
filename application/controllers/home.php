@@ -59,15 +59,25 @@ class Home extends CI_Controller {
             echo json_encode($bg);
         } else {
             $sesData = array(
-                'gameId' => $id,                
+                'gameId' => $id,
             );
 
             $this->session->set_userdata($sesData);
             $data = array(
-                'redirect'=>base_url().'index.php/game'
+                'redirect' => base_url() . 'index.php/game'
             );
             echo json_encode($data);
         }
+    }
+
+    public function logout() {
+
+        $this->session->sess_destroy();
+
+        $data = array(
+            'redirect' => base_url() . 'index.php/game'
+        );
+        echo json_encode($data);
     }
 
 }
