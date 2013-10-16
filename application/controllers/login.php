@@ -36,7 +36,7 @@ class Login extends CI_Controller {
                     $this->set_session($username);
                     redirect($this->uri->uri_string());
                 } else {
-                    $data['error'] = $this->parser->parse('components/error', array(), true);
+                    $data['error'] = $this->parser->parse('components/error', array('msg'=>'Login credentials are not OK. Try again.'), true);
                 }
             } else {
                 $data['error'] = $this->parser->parse('components/error', array(), true);

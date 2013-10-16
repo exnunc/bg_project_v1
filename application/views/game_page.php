@@ -20,7 +20,7 @@
                             <!--<p>...</p>
                             <p><a href="#" class="btn btn-primary">Button</a> -->
                                 
-                                <p><a href="#" class="btn btn-default">Buy</a></p>
+                                <p><a id="shop-{bg_id}" href="#" class="btn btn-default"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a></p>
                         </div>
                     </div>
                 </div>

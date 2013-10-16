@@ -4,26 +4,19 @@ $(document).ready(function() {
 
     typeaheadForSearch();
     $('#logout-btn').bind('click', signOut);
+    $('.view-cart').bind('click', viewCart);
 
 
 
 
 });
 
+var viewCart = function() {
+    ajaxCallRedirect('home/shopping_cart',{});
+};
 
 var signOut = function() {
-    $.ajax({
-        type: "POST",
-        dataType: "json",
-        async: false,
-        cache: false,
-        url: 'home/logout',
-        success: function(response) {
-            if (response) {
-                window.location = response.redirect;
-            }
-        }
-    });
+    ajaxCallRedirect('home/logout',{});
 };
 
 var typeaheadForSearch = function() {
@@ -43,19 +36,9 @@ var typeaheadForSearch = function() {
             }
 
         }]).bind('typeahead:selected', function(obj, datum) {
-
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            async: false,
-            cache: false,
-            url: 'home/boardgames/' + datum.id,
-            success: function(response) {
-                if (response) {
-                    window.location = response.redirect;
-                }
-            }
-        });
+        
+        ajaxCallRedirect('home/boardgames/' + datum.id,{});
+        
 
 
     });

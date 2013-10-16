@@ -70,6 +70,14 @@ class Home extends CI_Controller {
         }
     }
 
+    public function shopping_cart() {
+
+        $data = array(
+            'redirect' => base_url() . 'index.php/shopping_cart'
+        );
+        echo json_encode($data);
+    }
+
     public function logout() {
 
         $this->session->sess_destroy();

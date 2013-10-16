@@ -1,6 +1,6 @@
 <?php
 
-class Game extends CI_Controller {
+class Shopping_cart extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -8,6 +8,8 @@ class Game extends CI_Controller {
         $this->load->model('boardgame_model');
         $this->load->model('review_model');
         $this->load->model('category_model');
+        $this->load->model('shopping_model');
+
         $this->load->library('session');
         $this->load->library('parser');
         $this->load->helper('url');
@@ -19,31 +21,27 @@ class Game extends CI_Controller {
     }
 
     public function index() {
-        $bg = $this->boardgame_model->get_boardgames($this->session->userdata('gameId'));
-        $reviews = $this->review_model->get_reviews_by_bg_id($this->session->userdata('gameId'));
+
+        $cart = $this->shopping_model->get_shopping_cart_of_user($this->session->userdata('u'));
         $data = array(
-            'test' => 'asdasda',
             'base_url' => base_url(),
-            'v' => 'game_page',
-            'bg_id' => $bg['bg_id'],
-            'bg_name' => $bg['bg_name'],
-            'bg_description' => $bg['bg_description'],
-            'bg_path'=> base_url().'assets/img/'.$bg['bg_image'],
-            'reviews' => $reviews
+            'v' => 'shopping_cart',
+            'cart' => $cart,
+            'error'=>''
         );
-        
+
         if ($this->check_session->check()) {
             $data['menu'] = $this->parser->parse('components/menu', array(), true);
             $data['admin_dropdown'] = ' ';
-            
+            if($this->shopping_model->shopping_cart_empty()){
+                $data['error'] = $this->parser->parse('components/error', array('msg'=>'Cart is empty.'), true);
+            }
             $this->parser->parse('template', $data);
-            
         }
         else
             redirect('login');
-        
     }
 
-   
 }
+
 ?>

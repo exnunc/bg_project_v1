@@ -1,1 +1,1 @@
-<div class="alert alert-danger">Login credentials are not OK. Try again.</div>
+<div class="alert alert-danger">{msg}</div>
