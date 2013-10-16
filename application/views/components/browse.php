@@ -1,6 +1,6 @@
 
 <div class="tab-pane" id="browse">
-   <!-- Single button -->
+    <!-- Single button -->
     <div class="btn-group">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
             Categories <span class="caret"></span>
@@ -12,6 +12,7 @@
             <li><a href="#">Children's Games</a></li>
         </ul>
     </div>
+<<<<<<< HEAD:application/views/templates/browse.php
    
    {bgames_cat}
    <div class="media">
@@ -25,4 +26,12 @@
     
    </div>
    {/bgames_cat}
+=======
+
+    {bgames_cat}
+    <p>{bg_name}</p>
+    <p>{bg_description}</p>
+    {/bgames_cat}
+
+>>>>>>> upstream/master:application/views/components/browse.php
 </div>

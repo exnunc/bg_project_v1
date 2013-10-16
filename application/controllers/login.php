@@ -37,17 +37,17 @@ class Login extends CI_Controller {
                     $this->set_session($username);
                     redirect($this->uri->uri_string());
                 } else {
-                    $data['error'] = $this->parser->parse('templates/error', array(), true);
+                    $data['error'] = $this->parser->parse('components/error', array(), true);
                 }
             } else {
-                $data['error'] = $this->parser->parse('templates/error', array(), true);
+                $data['error'] = $this->parser->parse('components/error', array(), true);
                 
             }
         }
 
         $data['v'] = 'login';
-        $data['featured'] = $this->parser->parse('templates/featured', array(), true);
-        $data['top5'] = $this->parser->parse('templates/top5', array(), true);
+        $data['featured'] = $this->parser->parse('components/featured', array(), true);
+        $data['top5'] = $this->parser->parse('components/top5', array(), true);
         $this->parser->parse('template', $data);
         
     }
