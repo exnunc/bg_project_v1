@@ -26,8 +26,8 @@ class Home extends CI_Controller {
             array_push($bgames_cat, $var);
         }
         $test = array(
-            'bg_name'=>'a',
-            'bg_description'=>'b'
+            'bg_name' => 'a',
+            'bg_description' => 'b'
         );
         $data = array(
             'test' => 'asdasda',
@@ -36,13 +36,15 @@ class Home extends CI_Controller {
             'name' => $name,
             'bgames_cat' => $bgames_cat
         );
-        
+
         if ($this->check_session->check()) {
             $data['menu'] = $this->parser->parse('components/menu', array(), true);
             $data['featured'] = $this->parser->parse('components/featured', array(), true);
             $data['top5'] = $this->parser->parse('components/top5', array(), true);
             $data['browse'] = $this->parser->parse('components/browse', $data, true);
             $data['admin_dropdown'] = ' ';
+            $data['game-item'] = ' ';
+            $data['game'] = ' ';
 
 
             $this->parser->parse('template', $data);
@@ -56,8 +58,15 @@ class Home extends CI_Controller {
             $bg = $this->boardgame_model->get_boardgames();
             echo json_encode($bg);
         } else {
-            $bg = $this->boardgame_model->get_boardgames($id);
-            echo json_encode($bg);
+            $sesData = array(
+                'gameId' => $id,                
+            );
+
+            $this->session->set_userdata($sesData);
+            $data = array(
+                'redirect'=>base_url().'index.php/game'
+            );
+            echo json_encode($data);
         }
     }
 

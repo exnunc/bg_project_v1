@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">BOARDMEET</a>
+        <a class="navbar-brand" href="home">BOARDMEET</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -15,9 +15,9 @@
 
         <div class="navbar-form navbar-left" role="search">
             <div class="form-group">
-                <input id="search-field" type="text" class="form-control typeahead" placeholder="Search" name="search">
+                <input id="search-field" type="text" class="form-control typeahead" placeholder="Search game" name="search">
             </div>
-            <span class="btn btn-default">GO</span>
+            
         </div>
       
 

@@ -9,6 +9,7 @@
                     <li><a href="#featured" data-toggle="tab">FEATURED</a></li>
                     <li><a href="#top5" data-toggle="tab">TOP 5</a></li>
                     <li><a href="#browse" data-toggle="tab">BROWSE</a></li>
+    
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="start">
