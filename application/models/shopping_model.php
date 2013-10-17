@@ -74,7 +74,14 @@ class Shopping_model extends CI_Model {
             return $query->row()->cart_quantity;
         }
     }
-
+    
+    public function remove_from_shopping_cart($id) {
+        $this->db->delete('shopping_carts', array('cart_id' => $id)); 
+    }
+    
+    public function empty_shopping_cart_for_user($uid) {
+        $this->db->delete('shopping_carts', array('cart_user_id' => $uid)); 
+    }
 }
 
 ?>

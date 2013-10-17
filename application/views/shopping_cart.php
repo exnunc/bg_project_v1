@@ -36,7 +36,7 @@
 
                                 </td>
                                 <td>{cart_bg_price}</td>
-                                <td id="remove-{cart_bg_id}"><span class="glyphicon glyphicon-trash"></span></td>
+                                <td id="remove-{cart_bg_id}" class="remove-from-cart" data-id="{cart_id}"><span class="glyphicon glyphicon-trash"></span></td>
                             </tr>
                             {/cart}
 
@@ -59,7 +59,7 @@
             
             <div class="row">
                 <div class="pull-right">
-                    <button class="btn btn-danger">Empty cart</button>
+                    <button class="btn btn-danger" id="empty-cart" data-uid="{user_id}">Empty cart</button>
                     <button class="btn btn-success">Checkout</button>
                 </div>
             </div>

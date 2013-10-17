@@ -7,7 +7,8 @@ $(document).ready(function() {
     $('#logout-btn').bind('click', signOut);
     $('.view-cart').bind('click', viewCart);
     $('.shop-btn').bind('click',addToCart);
-
+    $('.remove-from-cart').bind('click',removeFromCart);
+    $('#empty-cart').bind('click',emptyCart);
 
 });
 
@@ -30,6 +31,20 @@ var checkOnStock = function() {
         $('.shop-btn').addClass('disabled', 'true');
     }
 };
+
+var removeFromCart = function(){
+    if(confirm('Are you sure?')){
+        
+        ajaxCallRedirect('shopping_cart/remove_from_cart/'+$(this).data('id'),{});
+    }
+}
+
+var emptyCart = function(){
+    if(confirm('Are you sure?')){
+        
+        ajaxCallRedirect('shopping_cart/empty_cart/'+$(this).data('uid'),{});
+    }
+}
 
 var typeaheadForSearch = function() {
     $('#search-field').typeahead([{

@@ -77,6 +77,9 @@ class Shopping_cart extends CI_Controller {
             $data['admin_dropdown'] = ' ';
             if ($this->shopping_model->shopping_cart_empty()) {
                 $data['error'] = $this->parser->parse('components/error', array('msg' => 'Cart is empty.'), true);
+                $data['user_id'] = '';
+            }else{
+                $data['user_id'] = $cart[0]['cart_user_id'];
             }
             $this->parser->parse('template', $data);
         }
@@ -87,6 +90,24 @@ class Shopping_cart extends CI_Controller {
     public function add_to_cart(){
         $data = array();
         $this->shopping_model->add_to_shopping_cart();
+        
+        $data['redirect'] =  base_url() . 'index.php/shopping_cart';
+                
+        echo json_encode($data);
+    }
+    
+    public function remove_from_cart($id){
+        $data = array();
+        $this->shopping_model->remove_from_shopping_cart($id);
+        
+        $data['redirect'] =  base_url() . 'index.php/shopping_cart';
+                
+        echo json_encode($data);
+    }
+    
+    public function empty_cart($uid){
+        $data = array();
+        $this->shopping_model->empty_shopping_cart_for_user($uid);
         
         $data['redirect'] =  base_url() . 'index.php/shopping_cart';
                 
