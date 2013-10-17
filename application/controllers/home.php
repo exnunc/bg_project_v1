@@ -25,6 +25,10 @@ class Home extends CI_Controller {
             $var = $this->boardgame_model->get_boardgames($bg_id_list[$i]['bg_id']);
             array_push($bgames_cat, $var);
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
         $data = array(
             'test' => 'asdasda',
             'base_url' => base_url(),
@@ -33,13 +37,15 @@ class Home extends CI_Controller {
             'bgames_cat' => $bgames_cat,
                 
         );
-        
+
         if ($this->check_session->check()) {
             $data['menu'] = $this->parser->parse('components/menu', array(), true);
             $data['featured'] = $this->parser->parse('components/featured', array(), true);
             $data['top5'] = $this->parser->parse('components/top5', array(), true);
             $data['browse'] = $this->parser->parse('components/browse', $data, true);
             $data['admin_dropdown'] = ' ';
+            $data['game-item'] = ' ';
+            $data['game'] = ' ';
 
 
             $this->parser->parse('template', $data);
@@ -53,9 +59,34 @@ class Home extends CI_Controller {
             $bg = $this->boardgame_model->get_boardgames();
             echo json_encode($bg);
         } else {
-            $bg = $this->boardgame_model->get_boardgames($id);
-            echo json_encode($bg);
+            $sesData = array(
+                'gameId' => $id,
+            );
+
+            $this->session->set_userdata($sesData);
+            $data = array(
+                'redirect' => base_url() . 'index.php/game'
+            );
+            echo json_encode($data);
         }
+    }
+
+    public function shopping_cart() {
+
+        $data = array(
+            'redirect' => base_url() . 'index.php/shopping_cart'
+        );
+        echo json_encode($data);
+    }
+
+    public function logout() {
+
+        $this->session->sess_destroy();
+
+        $data = array(
+            'redirect' => base_url() . 'index.php/game'
+        );
+        echo json_encode($data);
     }
 
 }

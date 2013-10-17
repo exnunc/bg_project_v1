@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">BOARDMEET</a>
+        <a class="navbar-brand" href="home">BOARDMEET</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -15,9 +15,9 @@
 
         <div class="navbar-form navbar-left" role="search">
             <div class="form-group">
-                <input id="search-field" type="text" class="form-control typeahead" placeholder="Search" name="search">
+                <input id="search-field" type="text" class="form-control typeahead" placeholder="Search game" name="search">
             </div>
-            <span class="btn btn-default">GO</span>
+            
         </div>
       
 
@@ -26,11 +26,11 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
+                    <li class="view-cart"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> View cart</a></li>
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
                     <li class="divider"></li>
-                    <li><a href="#">Logout</a></li>
+                    <li id="logout-btn"><a>Logout</a></li>
                 </ul>
             </li>
         </ul>
