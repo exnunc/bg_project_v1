@@ -25,10 +25,7 @@ class Home extends CI_Controller {
             $var = $this->boardgame_model->get_boardgames($bg_id_list[$i]['bg_id']);
             array_push($bgames_cat, $var);
         }
-        $test = array(
-            'bg_name' => 'a',
-            'bg_description' => 'b'
-        );
+
         $data = array(
             'test' => 'asdasda',
             'base_url' => base_url(),

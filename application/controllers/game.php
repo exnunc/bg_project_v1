@@ -43,6 +43,16 @@ class Game extends CI_Controller {
             redirect('login');
         
     }
+    
+    public function on_stock(){
+        $data = array();
+       
+        if($this->boardgame_model->get_boardgame_stock($this->session->userdata('gameId'))){
+            $data['quantity'] = $this->boardgame_model->get_boardgame_stock($this->session->userdata('gameId'));
+        }else $data['quantity'] = 0;
+        
+        echo json_encode($data);
+    }
 
    
 }

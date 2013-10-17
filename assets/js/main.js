@@ -1,22 +1,34 @@
 $(document).ready(function() {
 
-    var boardgames = ajaxCall('home/boardgames');
 
     typeaheadForSearch();
+    checkOnStock();
+
     $('#logout-btn').bind('click', signOut);
     $('.view-cart').bind('click', viewCart);
-
-
+    $('.shop-btn').bind('click',addToCart);
 
 
 });
 
 var viewCart = function() {
-    ajaxCallRedirect('home/shopping_cart',{});
+    ajaxCallRedirect('home/shopping_cart', {});
 };
 
 var signOut = function() {
-    ajaxCallRedirect('home/logout',{});
+    ajaxCallRedirect('home/logout', {});
+};
+
+var addToCart = function(){
+    ajaxCallRedirect('shopping_cart/add_to_cart', {});
+};
+
+var checkOnStock = function() {
+    var onStock = ajaxCall('game/on_stock', {});
+    if (onStock.quantity == 0) {
+        $('.shop-btn').html('<span class="glyphicon glyphicon-shopping-cart"></span> Sold out');
+        $('.shop-btn').addClass('disabled', 'true');
+    }
 };
 
 var typeaheadForSearch = function() {
@@ -36,9 +48,9 @@ var typeaheadForSearch = function() {
             }
 
         }]).bind('typeahead:selected', function(obj, datum) {
-        
-        ajaxCallRedirect('home/boardgames/' + datum.id,{});
-        
+
+        ajaxCallRedirect('home/boardgames/' + datum.id, {});
+
 
 
     });
