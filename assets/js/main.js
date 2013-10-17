@@ -20,8 +20,5 @@ $(document).ready(function() {
         var bg = ajaxCall(window.location+'/boardgames/'+datum.id);
         console.log(bg);
     });
-
-
-
 });
 

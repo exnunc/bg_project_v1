@@ -19,22 +19,19 @@ class Home extends CI_Controller {
 
     public function index() {
         $name = $this->login_model->get_name_by_username();
-        $bg_id_list = $this->category_model->get_games_by_cat_id(2);
+        $bg_id_list = $this->category_model->get_games_by_cat_id(1);
         $bgames_cat = array();
         for ($i = 0; $i < count($bg_id_list); $i++) {
             $var = $this->boardgame_model->get_boardgames($bg_id_list[$i]['bg_id']);
             array_push($bgames_cat, $var);
         }
-        $test = array(
-            'bg_name'=>'a',
-            'bg_description'=>'b'
-        );
         $data = array(
             'test' => 'asdasda',
             'base_url' => base_url(),
             'v' => 'home',
             'name' => $name,
-            'bgames_cat' => $bgames_cat
+            'bgames_cat' => $bgames_cat,
+                
         );
         
         if ($this->check_session->check()) {

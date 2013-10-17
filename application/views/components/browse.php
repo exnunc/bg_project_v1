@@ -12,26 +12,16 @@
             <li><a href="#">Children's Games</a></li>
         </ul>
     </div>
-<<<<<<< HEAD:application/views/templates/browse.php
-   
+
    {bgames_cat}
    <div class="media">
         <a class="pull-left" href="#">
-        <!--<img class="media-object" src="..." alt="...">-->
+            <img class="media-object" src="C:\Users\Anamaria\Downloads\index.jpg" alt="...">
         </a>
-        <div class="media-body">
-        <h4 class="media-heading">{bgames_cat['bg_name']}</h4>
-            <p>{bgames_cat['bg_description']}</p>
+         <div class="media-body">
+            <h4 class="media-heading">{bg_name}</h4>
+                <p>{bg_description}</p>
         </div>
-    
-   </div>
+    </div>
    {/bgames_cat}
-=======
-
-    {bgames_cat}
-    <p>{bg_name}</p>
-    <p>{bg_description}</p>
-    {/bgames_cat}
-
->>>>>>> upstream/master:application/views/components/browse.php
 </div>
