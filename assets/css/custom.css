@@ -19,13 +19,25 @@ div
     height: 34px;
     -webkit-appearance: none;
 }
+
+
 .styled-select {
-    width: 70px;
+    
     height: 34px;
     overflow: hidden;
     background: url(../img/design/down_arrow_select.jpg) no-repeat right #ddd;
     border: 1px solid #ccc;
 }
+#quantity-select{
+    width: 70px;
+}
+#payment-select{
+    width: 150px;
+}
+#payment-select select{
+    width: 160px!important;
+}
+
 #search-field{
     background-color: white!important;
 }

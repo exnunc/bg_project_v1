@@ -7,9 +7,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="home">BOARDMEET</a>
+        <a class="navbar-brand" href="{base_url}index.php/home">BOARDMEET</a>
     </div>
-
+    
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
 

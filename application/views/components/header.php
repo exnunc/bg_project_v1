@@ -8,3 +8,7 @@
 
 </head>
 <body>
+    
+    <div id="base-url" data-url="{base_url}">
+        
+    </div>

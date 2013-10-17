@@ -3,6 +3,7 @@ $(document).ready(function() {
 
     typeaheadForSearch();
     checkOnStock();
+    blockCheckout();
 
     $('#logout-btn').bind('click', signOut);
     $('.view-cart').bind('click', viewCart);
@@ -10,52 +11,74 @@ $(document).ready(function() {
     $('.remove-from-cart').bind('click', removeFromCart);
     $('#empty-cart').bind('click', emptyCart);
     $('.select-quantity').bind('change', updateQuantity);
+    $('#checkout-btn').bind('click', checkout);
+    $('.back-btn').bind('click', goBack);
 
 });
 
+
 var viewCart = function() {
-    ajaxCallRedirect('home/shopping_cart', {});
+    ajaxCallRedirect($('#base-url').data('url')+'index.php/home/shopping_cart', {});
 };
 
 var signOut = function() {
-    ajaxCallRedirect('home/logout', {});
+    ajaxCallRedirect($('#base-url').data('url')+'index.php/home/logout', {});
 };
 
 var addToCart = function() {
-    ajaxCallRedirect('shopping_cart/add_to_cart', {});
+    ajaxCallRedirect($('#base-url').data('url')+'index.php/shopping_cart/add_to_cart', {});
+};
+
+var checkout = function() {
+    ajaxCallRedirect($('#base-url').data('url')+'index.php/shopping_cart/checkout', {});
 };
 
 var checkOnStock = function() {
-    var onStock = ajaxCall('game/on_stock', {});
+    var onStock = ajaxCall($('#base-url').data('url')+'index.php/game/on_stock', {});
     if (onStock.quantity == 0) {
         $('.shop-btn').html('<span class="glyphicon glyphicon-shopping-cart"></span> Sold out');
         $('.shop-btn').addClass('disabled', 'true');
     }
 };
 
+var goBack = function() {
+    parent.history.back();
+    return false;
+};
+
+var blockCheckout = function() {
+
+    if ($('#checkout-btn').data('error') !== '') {
+
+        $('#checkout-btn').addClass('disabled', 'true');
+    } else {
+        $('#checkout-btn').removeClass('disabled');
+    }
+};
+
 var removeFromCart = function() {
     if (confirm('Are you sure?')) {
 
-        ajaxCallRedirect('shopping_cart/remove_from_cart/' + $(this).data('id'), {});
+        ajaxCallRedirect($('#base-url').data('url')+'index.php/shopping_cart/remove_from_cart/' + $(this).data('id'), {});
     }
 }
 
 var emptyCart = function() {
     if (confirm('Are you sure?')) {
 
-        ajaxCallRedirect('shopping_cart/empty_cart/' + $(this).data('uid'), {});
+        ajaxCallRedirect($('#base-url').data('url')+'index.php/shopping_cart/empty_cart/' + $(this).data('uid'), {});
     }
 }
 
 var updateQuantity = function() {
-    ajaxCallRedirect('shopping_cart/update_quantity_manually/' + $(this).data('id'), {'newValue':$(this).val()});
+    ajaxCallRedirect($('#base-url').data('url')+'index.php/shopping_cart/update_quantity_manually/' + $(this).data('id'), {'newValue': $(this).val()});
 };
 
 var typeaheadForSearch = function() {
     $('#search-field').typeahead([{
             valueKey: 'name',
             prefetch: {
-                url: 'home/boardgames',
+                url: $('#base-url').data('url')+'index.php/home/boardgames',
                 filter: function(data) {
                     retval = [];
 
@@ -69,7 +92,7 @@ var typeaheadForSearch = function() {
 
         }]).bind('typeahead:selected', function(obj, datum) {
 
-        ajaxCallRedirect('home/boardgames/' + datum.id, {});
+        ajaxCallRedirect($('#base-url').data('url')+'index.php/home/boardgames/' + datum.id, {});
 
 
 
