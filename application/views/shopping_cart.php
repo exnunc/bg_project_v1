@@ -27,9 +27,9 @@
                                 <td>{cart_bg_name}</td>
                                 <td>
                                     <div class="styled-select">
-                                        <select>
+                                        <select data-id="{cart_id}" class="select-quantity">
                                             {cart_bg_stock_range}
-                                            <option {selected}>{val}</option>
+                                            <option {selected} value="{val}">{val}</option>
                                             {/cart_bg_stock_range}
                                         </select>
                                     </div>

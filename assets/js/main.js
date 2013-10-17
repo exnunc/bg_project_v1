@@ -6,9 +6,10 @@ $(document).ready(function() {
 
     $('#logout-btn').bind('click', signOut);
     $('.view-cart').bind('click', viewCart);
-    $('.shop-btn').bind('click',addToCart);
-    $('.remove-from-cart').bind('click',removeFromCart);
-    $('#empty-cart').bind('click',emptyCart);
+    $('.shop-btn').bind('click', addToCart);
+    $('.remove-from-cart').bind('click', removeFromCart);
+    $('#empty-cart').bind('click', emptyCart);
+    $('.select-quantity').bind('change', updateQuantity);
 
 });
 
@@ -20,7 +21,7 @@ var signOut = function() {
     ajaxCallRedirect('home/logout', {});
 };
 
-var addToCart = function(){
+var addToCart = function() {
     ajaxCallRedirect('shopping_cart/add_to_cart', {});
 };
 
@@ -32,19 +33,23 @@ var checkOnStock = function() {
     }
 };
 
-var removeFromCart = function(){
-    if(confirm('Are you sure?')){
-        
-        ajaxCallRedirect('shopping_cart/remove_from_cart/'+$(this).data('id'),{});
+var removeFromCart = function() {
+    if (confirm('Are you sure?')) {
+
+        ajaxCallRedirect('shopping_cart/remove_from_cart/' + $(this).data('id'), {});
     }
 }
 
-var emptyCart = function(){
-    if(confirm('Are you sure?')){
-        
-        ajaxCallRedirect('shopping_cart/empty_cart/'+$(this).data('uid'),{});
+var emptyCart = function() {
+    if (confirm('Are you sure?')) {
+
+        ajaxCallRedirect('shopping_cart/empty_cart/' + $(this).data('uid'), {});
     }
 }
+
+var updateQuantity = function() {
+    ajaxCallRedirect('shopping_cart/update_quantity_manually/' + $(this).data('id'), {'newValue':$(this).val()});
+};
 
 var typeaheadForSearch = function() {
     $('#search-field').typeahead([{

@@ -67,6 +67,15 @@ class Shopping_model extends CI_Model {
         $this->db->where(array('cart_bg_id' => $id));
         $this->db->update('shopping_carts', $data);
     }
+    
+    public function update_quantity_manually($id,$val) {
+
+        $data = array(
+            'cart_quantity' =>  $val
+        );
+        $this->db->where(array('cart_id' => $id));
+        $this->db->update('shopping_carts', $data);
+    }
 
     public function get_boardgame_quantity($id) {
         $query = $this->db->get_where('shopping_carts', array('cart_bg_id' => $id));

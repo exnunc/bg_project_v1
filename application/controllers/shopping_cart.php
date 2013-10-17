@@ -114,6 +114,15 @@ class Shopping_cart extends CI_Controller {
         echo json_encode($data);
     }
 
+     public function update_quantity_manually($id){
+        $data = array();
+        $this->shopping_model->update_quantity_manually($id, $this->input->post('newValue'));
+        
+        $data['redirect'] =  base_url() . 'index.php/shopping_cart';
+                
+        echo json_encode($data);
+    }
+    
 }
 
 ?>
