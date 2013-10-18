@@ -6,17 +6,17 @@
             Categories <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="categories">
-            <li><a href="#">Strategy Games</a></li>
-            <li><a href="#">Card Games</a></li>
-            <li><a href="#">Classic Games</a></li>
-            <li><a href="#">Children's Games</a></li>
+            <li id="category1"><a href="#">Strategy Games</a></li>
+            <li id="category2"><a href="#">Card Games</a></li>
+            <li id="category3"><a href="#">Classic Games</a></li>
+            <li id="category4"><a href="#">Children's Games</a></li>
         </ul>
     </div>
 
    {bgames_cat}
    <div class="media">
         <a class="pull-left" href="#">
-            <img class="media-object" src="C:\Users\Anamaria\Downloads\index.jpg" alt="...">
+            <img class="media-object" src="" alt="...">
         </a>
          <div class="media-body">
             <h4 class="media-heading">{bg_name}</h4>
