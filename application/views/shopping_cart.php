@@ -26,7 +26,7 @@
                                 <td>{cart_bg_id}</td>
                                 <td>{cart_bg_name}</td>
                                 <td>
-                                    <div class="styled-select">
+                                    <div class="styled-select" id="quantity-select">
                                         <select data-id="{cart_id}" class="select-quantity">
                                             {cart_bg_stock_range}
                                             <option {selected} value="{val}">{val}</option>
@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="pull-right">
                     <button class="btn btn-danger" id="empty-cart" data-uid="{user_id}">Empty cart</button>
-                    <button class="btn btn-success">Checkout</button>
+                    <button id="checkout-btn" class="btn btn-success" data-error="{empty_cart}">Checkout</button>
                 </div>
             </div>
 

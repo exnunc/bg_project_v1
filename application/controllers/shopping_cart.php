@@ -78,8 +78,11 @@ class Shopping_cart extends CI_Controller {
             if ($this->shopping_model->shopping_cart_empty()) {
                 $data['error'] = $this->parser->parse('components/error', array('msg' => 'Cart is empty.'), true);
                 $data['user_id'] = '';
+                $data['empty_cart'] = 'true';
             }else{
                 $data['user_id'] = $cart[0]['cart_user_id'];
+                $data['empty_cart'] = '';
+
             }
             $this->parser->parse('template', $data);
         }
@@ -123,6 +126,12 @@ class Shopping_cart extends CI_Controller {
         echo json_encode($data);
     }
     
+    public function checkout(){
+        $data = array();
+      
+        $data['redirect'] =  base_url() . 'index.php/checkout';               
+        echo json_encode($data);
+    }
 }
 
 ?>
