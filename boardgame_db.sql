@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 17, 2013 at 10:51 AM
+-- Generation Time: Oct 18, 2013 at 07:12 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -146,6 +146,39 @@ CREATE TABLE IF NOT EXISTS `meetings` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE IF NOT EXISTS `orders` (
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_firstname` varchar(30) NOT NULL,
+  `order_lastname` varchar(30) NOT NULL,
+  `order_email` varchar(30) NOT NULL,
+  `order_telephone` varchar(30) NOT NULL,
+  `order_address` varchar(100) NOT NULL,
+  `order_country` varchar(30) NOT NULL,
+  `order_city` varchar(30) NOT NULL,
+  `order_zip` varchar(15) NOT NULL,
+  `order_date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`order_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders_cartitems`
+--
+
+CREATE TABLE IF NOT EXISTS `orders_cartitems` (
+  `oc_id` int(11) NOT NULL AUTO_INCREMENT,
+  `oc_order_id` int(11) NOT NULL,
+  `oc_cart_id` int(11) NOT NULL,
+  PRIMARY KEY (`oc_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reviews`
 --
 
@@ -179,18 +212,14 @@ CREATE TABLE IF NOT EXISTS `shopping_carts` (
   `cart_quantity` int(11) NOT NULL DEFAULT '1',
   `cart_date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`cart_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `shopping_carts`
 --
 
 INSERT INTO `shopping_carts` (`cart_id`, `cart_user_id`, `cart_bg_id`, `cart_quantity`, `cart_date_added`) VALUES
-(1, 1, 2, 5, '2013-10-17 06:03:44'),
-(2, 1, 1, 5, '2013-10-17 08:26:30'),
-(3, 1, 5, 2, '2013-10-17 09:58:47'),
-(4, 1, 6, 1, '2013-10-17 10:26:25'),
-(5, 1, 8, 1, '2013-10-17 10:41:14');
+(11, 1, 1, 1, '2013-10-17 16:37:24');
 
 -- --------------------------------------------------------
 

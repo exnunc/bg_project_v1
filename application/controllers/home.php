@@ -35,7 +35,7 @@ class Home extends CI_Controller {
         );
 
         if ($this->check_session->check()) {
-            $data['menu'] = $this->parser->parse('components/menu', array(), true);
+            $data['menu'] = $this->parser->parse('components/menu',array('base_url'=>base_url()), true);
             $data['featured'] = $this->parser->parse('components/featured', array(), true);
             $data['top5'] = $this->parser->parse('components/top5', array(), true);
             $data['browse'] = $this->parser->parse('components/browse', $data, true);

@@ -73,13 +73,14 @@ class Shopping_cart extends CI_Controller {
         );
 
         if ($this->check_session->check()) {
-            $data['menu'] = $this->parser->parse('components/menu', array(), true);
+            $data['menu'] = $this->parser->parse('components/menu',array('base_url'=>base_url()), true);
             $data['admin_dropdown'] = ' ';
             if ($this->shopping_model->shopping_cart_empty()) {
                 $data['error'] = $this->parser->parse('components/error', array('msg' => 'Cart is empty.'), true);
                 $data['user_id'] = '';
                 $data['empty_cart'] = 'true';
             }else{
+                ////////////////////////////////////////////check this
                 $data['user_id'] = $cart[0]['cart_user_id'];
                 $data['empty_cart'] = '';
 
