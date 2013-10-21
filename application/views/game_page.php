@@ -20,7 +20,10 @@
                             <!--<p>...</p>
                             <p><a href="#" class="btn btn-primary">Button</a> -->
                                 
-                                <p><a id="shop-{bg_id}" href="#" class="shop-btn btn btn-default"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a></p>
+                                <p>
+                                    <a id="shop-{bg_id}" href="#" class="shop-btn btn btn-default"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a>
+                                    <a id="meet-{bg_id}" data-toggle="modal" href="#meetings-modal" class="meet-btn btn btn-default"><span class="glyphicon glyphicon-fire"></span>Meetings</a>
+                                </p>
                         </div>
                     </div>
                 </div>
@@ -36,6 +39,31 @@
         </div>
     </div><!-- /row -->
 </div>
+
+<!-- Modal for meetings-->
+<div class="modal fade" id="meetings-modal" tabindex="-1" role="dialog" aria-labelledby="meetings" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Meetings</h4>
+            </div>
+            <div class="modal-body" >
+                {meetings}
+                <p>
+                    <b>{meet_location}, {meet_date} </b>( <small>{meet_details}</small> )
+                </p>
+                {/meetings}
+            </div>
+            <div class="modal-footer">
+                <input type="text" placeholder="Location">
+                <input type="text" placeholder="Details">
+                <button id="save-new-meeting" type="button" class="btn btn-default">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
 

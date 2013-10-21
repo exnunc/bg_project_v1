@@ -7,6 +7,7 @@ class Game extends CI_Controller {
         $this->load->model('login_model');
         $this->load->model('boardgame_model');
         $this->load->model('review_model');
+        $this->load->model('meeting_model');
         $this->load->model('category_model');
         $this->load->library('session');
         $this->load->library('parser');
@@ -21,6 +22,8 @@ class Game extends CI_Controller {
     public function index() {
         $bg = $this->boardgame_model->get_boardgames($this->session->userdata('gameId'));
         $reviews = $this->review_model->get_reviews_by_bg_id($this->session->userdata('gameId'));
+        $meetings = $this->meeting_model->get_meetings_by_bg_id($this->session->userdata('gameId'));
+        
         $data = array(
             'test' => 'asdasda',
             'base_url' => base_url(),
@@ -29,7 +32,8 @@ class Game extends CI_Controller {
             'bg_name' => $bg['bg_name'],
             'bg_description' => $bg['bg_description'],
             'bg_path'=> base_url().'assets/img/'.$bg['bg_image'],
-            'reviews' => $reviews
+            'reviews' => $reviews,
+            'meetings' =>$meetings
         );
         
         if ($this->check_session->check()) {
