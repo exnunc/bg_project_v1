@@ -1,6 +1,11 @@
 .panes-container{
     margin-top:100px;
 }
+#meetings-body{
+    max-height: 300px;    
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
 .tralala{
   height:auto;

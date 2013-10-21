@@ -19,11 +19,11 @@
                             <h3>{bg_name}</h3>
                             <!--<p>...</p>
                             <p><a href="#" class="btn btn-primary">Button</a> -->
-                                
-                                <p>
-                                    <a id="shop-{bg_id}" href="#" class="shop-btn btn btn-default"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a>
-                                    <a id="meet-{bg_id}" data-toggle="modal" href="#meetings-modal" class="meet-btn btn btn-default"><span class="glyphicon glyphicon-fire"></span>Meetings</a>
-                                </p>
+
+                            <p>
+                                <a id="shop-{bg_id}" href="#" class="shop-btn btn btn-default"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a>
+                                <a id="meet-{bg_id}" data-toggle="modal" href="#meetings-modal" class="meet-btn btn btn-default"><span class="glyphicon glyphicon-fire"></span>Meetings</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -48,16 +48,28 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">Meetings</h4>
             </div>
-            <div class="modal-body" >
-                {meetings}
-                <p>
-                    <b>{meet_location}, {meet_date} </b>( <small>{meet_details}</small> )
-                </p>
-                {/meetings}
+            <div id="meetings-body" class="modal-body" >
+                {meet_area}
             </div>
             <div class="modal-footer">
-                <input type="text" placeholder="Location">
-                <input type="text" placeholder="Details">
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <input type="text" class ="form-control" id="meet-location" placeholder="Location">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="datetime-local" class="form-control" name="meetdaytime" id="meet-time-id">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <div class="col-lg-12">
+                        <input type="text" class="form-control" id="meet-details" placeholder="Details">
+                    </div>
+                   
+                </div>
+
+
+                
                 <button id="save-new-meeting" type="button" class="btn btn-default">Save</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             </div>
