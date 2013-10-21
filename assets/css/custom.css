@@ -2,6 +2,15 @@
     margin-top:100px;
 }
 
+.tralala{
+  height:auto;
+  width:auto;
+  max-width:200px; 
+  max-height:200px;
+}
+.margine{
+    margin-left:13%;
+}
 div
 {
     text-align:justify;
