@@ -11,7 +11,7 @@ $(document).ready(function() {
     $('.remove-from-cart').bind('click', removeFromCart);
     $('#empty-cart').bind('click', emptyCart);
     $('.select-quantity').bind('change', updateQuantity);
-    $('#checkout-btn').bind('click', checkout);
+    $('#checkout-btn').bind('click', checkoutStepOne);
     $('.back-btn').bind('click', goBack);
 
 
@@ -30,9 +30,11 @@ var addToCart = function() {
     ajaxCallRedirect($('#base-url').data('url')+'index.php/shopping_cart/add_to_cart', {});
 };
 
-var checkout = function() {
+var checkoutStepOne = function() {
     ajaxCallRedirect($('#base-url').data('url')+'index.php/shopping_cart/checkout', {});
 };
+
+
 
 var checkOnStock = function() {
     var onStock = ajaxCall($('#base-url').data('url')+'index.php/game/on_stock', {});

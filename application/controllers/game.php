@@ -33,7 +33,7 @@ class Game extends CI_Controller {
         );
         
         if ($this->check_session->check()) {
-            $data['menu'] = $this->parser->parse('components/menu', array(), true);
+            $data['menu'] = $this->parser->parse('components/menu', array('base_url'=>base_url()), true);
             $data['admin_dropdown'] = ' ';
             
             $this->parser->parse('template', $data);

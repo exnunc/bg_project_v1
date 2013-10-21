@@ -8,15 +8,14 @@
             </div>
             <div class="row">
                 {error}
-
                 {form_open}
                 <div class="row well">
                     <div class="form-group row">
                         <div class="styled-select col-md-2">
-                            <select id="payment-select">
+                            <select id="payment-select" name="payment-select">
                                 
-                                <option value="onDelivery">Charge on delivery</option>
-                                <option value="otherOption">Other option</option>
+                                <option value="Charge on delivery">Charge on delivery</option>
+                                <option value="Other option">Other option</option>
                                 
                                 
                             </select>
