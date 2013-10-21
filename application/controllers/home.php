@@ -20,6 +20,8 @@ class Home extends CI_Controller {
     public function index() {
         $name = $this->login_model->get_name_by_username();
         $bg_id_list = $this->category_model->get_games_by_cat_id(1);
+        $featured_bg = $this->boardgame_model->get_last_boardgame_added();
+       
         $bgames_cat = array();
         $bg_path=array();
         for ($i = 0; $i < count($bg_id_list); $i++) {
@@ -34,12 +36,20 @@ class Home extends CI_Controller {
             'v' => 'home',
             'name' => $name,
             'bgames_cat' => $bgames_cat,
+            'featured_bg' => $featured_bg
                 
         );
 
         if ($this->check_session->check()) {
             $data['menu'] = $this->parser->parse('components/menu',array('base_url'=>base_url()), true);
-            $data['featured'] = $this->parser->parse('components/featured', array(), true);
+            $data['featured'] = $this->parser->parse('components/featured', 
+                    array(
+                        'featured_bg_name'=>$featured_bg['bg_name'],
+                        'featured_bg_path'=>base_url() . 'assets/img/' . $featured_bg['bg_image'],
+                        'featured_bg_description'=>$featured_bg['bg_description'],
+                    
+                    ),
+                    true);
             $data['top5'] = $this->parser->parse('components/top5', array(), true);
             $data['browse'] = $this->parser->parse('components/browse', $data, true);
             $data['admin_dropdown'] = ' ';

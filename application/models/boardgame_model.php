@@ -14,7 +14,7 @@ class Boardgame_model extends CI_Model {
             return false;
         }
     }
-    
+
     public function get_boardgame_stock($id) {
         $query = $this->db->get_where('boardgames', array('bg_id' => $id));
         if ($query->num_rows() > 0) {
@@ -31,24 +31,30 @@ class Boardgame_model extends CI_Model {
         return $query->row_array();
     }
 
+    public function get_last_boardgame_added() {
+        $this->db->order_by("bg_date_added", "desc"); 
+        $query = $this->db->get('boardgames',1);
+        return $query->row_array();
+    }
+
     public function get_name_by_id($id) {
 
         $query = $this->db->get_where('boardgames', array('bg_id' => $id));
         return $query->row()->bg_name;
     }
-    
+
     public function get_price_by_id($id) {
 
         $query = $this->db->get_where('boardgames', array('bg_id' => $id));
         return $query->row()->bg_price;
     }
-    
+
     public function get_stock_by_id($id) {
 
         $query = $this->db->get_where('boardgames', array('bg_id' => $id));
         return $query->row()->bg_stock;
     }
-    
+
 }
 
 ?>
