@@ -96,12 +96,12 @@ var typeaheadForSearch = function() {
 
         }]).bind('typeahead:selected', function(obj, datum) {
 
-<<<<<<< HEAD
+
 
         ajaxCallRedirect('home/boardgames/' + datum.id, {});
-=======
+
         ajaxCallRedirect($('#base-url').data('url')+'index.php/home/boardgames/' + datum.id, {});
->>>>>>> upstream/master
+
 
 
 

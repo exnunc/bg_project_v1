@@ -14,10 +14,11 @@
     </div>
 
    {bgames_cat}
-   <div class="media">
-        <a class="pull-left" href="#">
-            <img class="media-object" src="" alt="...">
+   <div class="media margine" >
+        <a class="pull-left" href="#" >
+            <img class="media-object tralala"  src="{path}" alt="...">
         </a>
+ 
          <div class="media-body">
             <h4 class="media-heading">{bg_name}</h4>
                 <p>{bg_description}</p>

@@ -21,9 +21,11 @@ class Home extends CI_Controller {
         $name = $this->login_model->get_name_by_username();
         $bg_id_list = $this->category_model->get_games_by_cat_id(1);
         $bgames_cat = array();
+        $bg_path=array();
         for ($i = 0; $i < count($bg_id_list); $i++) {
             $var = $this->boardgame_model->get_boardgames($bg_id_list[$i]['bg_id']);
             array_push($bgames_cat, $var);
+            $bgames_cat[$i]['path']=base_url().'assets/img/'.$bgames_cat[$i]['bg_image'];
         }
 
         $data = array(
