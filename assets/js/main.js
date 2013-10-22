@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
     $('span.stars').stars();
-    
+    $('span.starsVote').starsVote();
+
     typeaheadForSearch();
     checkOnStock();
     blockCheckout();
@@ -20,13 +21,38 @@ $(document).ready(function() {
 $.fn.stars = function() {
     return $(this).each(function() {
         var val = parseFloat($(this).html());
-        console.log(val);
+
         val = Math.round(val * 4) / 4;
-        var size = Math.max(0,(Math.min(5,val)))*16;
+        var size = Math.max(0, (Math.min(5, val))) * 16;
         var $span = $('<span/>').width(size);
         $(this).html($span);
     });
 };
+
+$.fn.starsVote = function() {
+    return $(this).each(function() {
+        $(this).mousemove(function(e) {
+            var parentOffset = $(this).parent().offset();
+            //or $(this).offset(); if you really just want the current element's offset
+            var relX = e.pageX - parentOffset.left;
+            var $span = $('<span/>').width(relX);
+            $(this).html($span);
+        });
+        $(this).mouseout(function(e) {
+            var $span = $('<span/>').width(0);
+            $(this).html($span);
+        });
+        
+        $(this).click(function(e){
+            var parentOffset = $(this).parent().offset();
+            var relX = e.pageX - parentOffset.left;
+
+            var val = Math.round(relX / 16);
+            console.log(val);
+        });
+    });
+};
+
 var viewCart = function() {
     ajaxCallRedirect($('#base-url').data('url') + 'index.php/home/shopping_cart', {});
 };

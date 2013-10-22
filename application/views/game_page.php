@@ -17,8 +17,8 @@
                         <img src="{bg_path}" alt="game image">
                         <div class="caption">
                             <h3>{bg_name}</h3>
-                            <!--<p>...</p>
-                            <p><a href="#" class="btn btn-primary">Button</a> -->
+                            
+                            <p><label for=".starsVote"><small><i>My rating:</i></small></label><span class="starsVote"></span></p>
 
                             <p>
                                 <a id="shop-{bg_id}" href="#" class="shop-btn btn btn-default"><span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a>
