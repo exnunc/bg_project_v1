@@ -6,7 +6,7 @@
                 <div id="game-description-container" class="col-md-9">
                     <div>
                         <h3>{bg_name}</h3>
-
+                        <span class="stars">{rating}</span>
                     </div>
                     <div id="game-description">
                         {bg_description}

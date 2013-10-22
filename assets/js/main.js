@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
-
+    $('span.stars').stars();
+    
     typeaheadForSearch();
     checkOnStock();
     blockCheckout();
@@ -13,7 +14,19 @@ $(document).ready(function() {
     $('#checkout-btn').bind('click', checkoutStepOne);
     $('.back-btn').bind('click', goBack);
     $('#save-new-meeting').bind('click', saveNewMeeting);
+
 });
+
+$.fn.stars = function() {
+    return $(this).each(function() {
+        var val = parseFloat($(this).html());
+        console.log(val);
+        val = Math.round(val * 4) / 4;
+        var size = Math.max(0,(Math.min(5,val)))*16;
+        var $span = $('<span/>').width(size);
+        $(this).html($span);
+    });
+};
 var viewCart = function() {
     ajaxCallRedirect($('#base-url').data('url') + 'index.php/home/shopping_cart', {});
 };

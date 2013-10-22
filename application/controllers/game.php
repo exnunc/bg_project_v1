@@ -24,6 +24,13 @@ class Game extends CI_Controller {
         $reviews = $this->review_model->get_reviews_by_bg_id($this->session->userdata('gameId'));
         $meetings = $this->meeting_model->get_meetings_by_bg_id($this->session->userdata('gameId'));
 
+
+        if ($bg['bg_times_voted'] == 0) {
+            $bg['rating'] = 0;
+        } else {
+            $bg['rating'] = $bg['bg_stars_no'] / $bg['bg_times_voted'];
+        }
+
         $data = array(
             'test' => 'asdasda',
             'base_url' => base_url(),
@@ -32,6 +39,7 @@ class Game extends CI_Controller {
             'bg_name' => $bg['bg_name'],
             'bg_description' => $bg['bg_description'],
             'bg_path' => base_url() . 'assets/img/' . $bg['bg_image'],
+            'rating' => $bg['rating'],
             'reviews' => $reviews,
             'meetings' => $meetings
         );
@@ -60,11 +68,10 @@ class Game extends CI_Controller {
     }
 
     public function add_new_meeting() {
-        
-        $this->meeting_model->add_new_meeting($this->input->post('meetLocation'),$this->input->post('meetDate'),$this->input->post('meetTime'),$this->input->post('meetDetails'),$this->login_model->get_id_by_username($this->session->userdata('u')),$this->session->userdata('gameId'));
+
+        $this->meeting_model->add_new_meeting($this->input->post('meetLocation'), $this->input->post('meetDate'), $this->input->post('meetTime'), $this->input->post('meetDetails'), $this->login_model->get_id_by_username($this->session->userdata('u')), $this->session->userdata('gameId'));
         $data['redirect'] = 'game';
         echo json_encode($data);
-
     }
 
 }
