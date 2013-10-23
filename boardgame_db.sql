@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 18, 2013 at 07:12 AM
+-- Generation Time: Oct 21, 2013 at 10:00 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -54,7 +54,7 @@ INSERT INTO `boardgames` (`bg_id`, `bg_name`, `bg_image`, `bg_description`, `bg_
 (4, 'Chess', 'chess1.jpg', 'Chess is a two-player strategy board game played on a chessboard, a checkered gameboard with 64 squares arranged in an eight-by-eight grid. It is one of the world''s most popular games, played by millions of people worldwide at home, in clubs, online, by correspondence, and in tournaments.\r\nEach player begins the game with 16 pieces: one king, one queen, two rooks, two knights, two bishops, and eight pawns. Each of the six piece types moves differently. Pieces are used to attack and capture the opponent''s pieces, with the objective to ''checkmate'' the opponent''s king by placing it under an inescapable threat of capture. In addition to checkmate, the game can be won by the voluntary resignation of the opponent, which typically occurs when too much material is lost, or if checkmate appears unavoidable. A game may also result in a draw in several ways, where neither player wins.', 0, 0, 2, 2, 18, '2013-10-14 10:00:04', 0),
 (5, 'Domino', 'domino1.jpg', 'Dominoes (or dominos) generally refers to the collective gaming pieces making up a domino set (sometimes called a deck or pack) or to the subcategory of tile games played with domino pieces. In the area of mathematical tilings and polyominoes, the word domino often refers to any rectangle formed from joining two congruent squares edge to edge. The traditional Sino-European domino set consists of 28 dominoes, colloquially nicknamed bones, cards, tiles, tickets, stones, or spinners. Each domino is a rectangular tile with a line dividing its face into two square ends. Each end is marked with a number of spots (also called pips or nips) or is blank. The backs of the dominoes in a set are indistinguishable, either blank or having some common design. A domino set is a generic gaming device, similar to playing cards or dice, in that a variety of games can be played with a set.', 0, 0, 2, 4, 17, '2013-10-14 10:01:12', 121),
 (6, 'Chomp Card Game', 'chomp1.jpg', 'Plunge into a fast-paced undersea world where life is survival of the quickest. Identify the lowest creature in the food chain then slap it before other players scarf it down. Big fish chomp little fish and everyone chomps plankton. Watch out for the ink-squirting octopus and if you spot an electric eel, get ready for an all-out feeding frenzy! Collect all the cards and you''re ruler of the deep blue sea!\r\n\r\nChomp! is a great tool to help teach children about the food chain. Players learn about the hierarchy of ocean species through employing skills such as visual discrimination and sequencing. It also helps to sharpen reflexes and teaches quick thinking and analysis while playing a fast-moving game.', 0, 0, 2, 5, 15, '2013-10-14 10:02:36', 20),
-(7, 'Killer Bunny', 'killerrabbits1.jpg', 'The objective of the game is to win, accomplished by acquiring carrot cards, one of which is revealed to be the winning "magic carrot" at the end of the game. Acquiring carrot cards is done primarily through the use of bunnies, which allow the use of an enormous variety of in-game actions. Thus, the game revolves around playing bunnies and eliminating opposing bunnies through various means (some comical and some violent, but the game art never shows blood or gore).\r\nEach player maintains a hand of five cards and a run cycle of two cards. In each turn, players normally turn the Top Run card face up to play it, then slide the Bottom Run card into the Top Run position, draw a replacement card, and place a card from their hand into the Bottom Run position, thus returning their hand size to five cards.\r\nCards may be one of different varieties: "Run" cards are the basic type of cards, while "Special" cards are those that may be either played normally, or may be saved for later use when put through the run cycle. "Very Special" cards are similar, except that the player may choose to play the card out of turn, immediately from their hand. There are also the "Play Immediately" cards, which are played whenever they are drawn. Finally, "Kaballa Dolla" cards represent the monetary currency in the game, which may be used to purchase various items at the start of the player''s turns.''', 0, 0, 2, 8, 0, '2013-10-14 10:06:22', 3),
+(7, 'Killer Bunny', 'killerrabbits1.jpg', 'The objective of the game is to win, accomplished by acquiring carrot cards, one of which is revealed to be the winning "magic carrot" at the end of the game. Acquiring carrot cards is done primarily through the use of bunnies, which allow the use of an enormous variety of in-game actions. Thus, the game revolves around playing bunnies and eliminating opposing bunnies through various means (some comical and some violent, but the game art never shows blood or gore).\r\nEach player maintains a hand of five cards and a run cycle of two cards. In each turn, players normally turn the Top Run card face up to play it, then slide the Bottom Run card into the Top Run position, draw a replacement card, and place a card from their hand into the Bottom Run position, thus returning their hand size to five cards.\r\nCards may be one of different varieties: "Run" cards are the basic type of cards, while "Special" cards are those that may be either played normally, or may be saved for later use when put through the run cycle. "Very Special" cards are similar, except that the player may choose to play the card out of turn, immediately from their hand. There are also the "Play Immediately" cards, which are played whenever they are drawn. Finally, "Kaballa Dolla" cards represent the monetary currency in the game, which may be used to purchase various items at the start of the player''s turns.''', 0, 0, 2, 8, 15, '2013-10-14 10:06:22', 3),
 (8, 'Poker', 'poker1.jpg', 'Poker is a family of card games involving betting and individual play, whereby the winner is determined by the ranks and combinations of their cards, some of which remain hidden until the end of the game. Poker games vary in the number of cards dealt, the number of shared or "community" cards and the number of cards that remain hidden. The betting procedures vary among different poker games in such ways as betting limits and splitting the pot between a high hand and a low hand.', 0, 0, 3, 7, 10, '2013-10-14 10:09:38', 52),
 (9, 'Risk', 'risk1.jpg', 'Risk is a strategic board game, produced by Parker Brothers (now a division of Hasbro). It was invented by French film director Albert Lamorisse and originally released in 1957 as La Conquête du Monde ("The Conquest of the World") in France. Risk is a turn-based game for two to six players. The standard version is played on a board depicting a political map of the Earth, divided into forty-two territories, which are grouped into six continents. The primary object of the game is "world domination," or "to occupy every territory on the board and in so doing, eliminate all other players."[1] Players control armies with which they attempt to capture territories from other players, with results determined by dice rolls.', 0, 0, 2, 6, 11, '2013-10-14 10:12:10', 11),
 (10, 'Rummikub', 'rummikub1.jpg', 'Rummikub''s main component is a pool of tiles, consisting of 104 number tiles and two or more joker tiles. The number tiles range in value from one to thirteen, in four colors ( black, yellow, blue and red, or other). Each combination of color and number is represented twice. Players each have a rack (container) to store tiles, without revealing the face of the tiles to the other players.\r\nRummikub may also be played using two decks of 52 playing cards, plus one joker per person. Cards have their face value, with ace counting for 1, jack for 11, queen for 12 and king for 13. It is advisable to use small cards, because space on the playing table is limited, and to deal the cards (rather than taking them from a pool) unless the backs of both decks have the same color and motif. Cards are less likely than tiles to read as upside down for any given player; however, large hands may prove slightly difficult to hold, especially for young ones.', 0, 0, 2, 4, 16, '2013-10-14 10:14:15', 7),
@@ -137,11 +137,33 @@ CREATE TABLE IF NOT EXISTS `meetings` (
   `meet_user_id` int(11) NOT NULL,
   `meet_bg_id` int(11) NOT NULL,
   `meet_location` varchar(100) NOT NULL,
-  `meet_date` int(11) NOT NULL DEFAULT '0',
+  `meet_date` varchar(30) NOT NULL,
   `meet_date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `meet_details` varchar(100) NOT NULL,
   PRIMARY KEY (`meet_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+
+--
+-- Dumping data for table `meetings`
+--
+
+INSERT INTO `meetings` (`meet_id`, `meet_user_id`, `meet_bg_id`, `meet_location`, `meet_date`, `meet_date_added`, `meet_details`) VALUES
+(1, 1, 2, 'Narnia', '0', '2013-10-21 07:08:22', 'pass wardrobe, turn left'),
+(2, 1, 2, 'test', '2013-10-10 ', '2013-10-21 08:41:26', 'asdfg'),
+(3, 1, 2, 'sdad', ' at ', '2013-10-21 08:46:16', 'sdsdsds'),
+(4, 1, 2, 'vvvv', ' at ', '2013-10-21 09:15:15', 'yhtfggfdgdf'),
+(5, 1, 2, 'e', ' at ', '2013-10-21 09:16:24', ''),
+(6, 1, 2, 'dfdfd', ' at ', '2013-10-21 09:17:48', ''),
+(7, 1, 2, 'aaaa', ' at ', '2013-10-21 09:21:39', ''),
+(8, 1, 2, 'v', ' at ', '2013-10-21 09:22:22', ''),
+(9, 1, 2, 'aaaaaaaaaaaaaaaaaaa', ' at ', '2013-10-21 09:29:01', ''),
+(10, 1, 2, 'trest', ' at ', '2013-10-21 09:39:55', ''),
+(11, 1, 2, 'sdsdsdsdsd', ' at ', '2013-10-21 09:40:09', ''),
+(12, 1, 2, 'x', ' at ', '2013-10-21 09:48:01', ''),
+(13, 1, 2, 'czxcxcx', '2013-11-01 ', '2013-10-21 09:50:02', ''),
+(14, 1, 2, 'sdsdsdsd', '2013-01-01 ', '2013-10-21 09:53:18', ''),
+(15, 1, 2, 'test', '2013-10-10 at 01:59', '2013-10-21 09:57:37', ''),
+(16, 1, 1, 'catan', '2013-10-09 at 13:59', '2013-10-21 09:58:51', 'test');
 
 -- --------------------------------------------------------
 
@@ -160,8 +182,20 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `order_city` varchar(30) NOT NULL,
   `order_zip` varchar(15) NOT NULL,
   `order_date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `order_payment` varchar(50) NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `order_firstname`, `order_lastname`, `order_email`, `order_telephone`, `order_address`, `order_country`, `order_city`, `order_zip`, `order_date_added`, `order_payment`) VALUES
+(27, 'a', 'a', '', '', 'asdsfdsfdfd', 'a', 'a', '', '2013-10-18 12:19:05', 'Charge on delivery'),
+(28, 'a', 'a', '', '', 'asdsfdsfdfd', 'a', 'a', '', '2013-10-18 12:19:36', 'Charge on delivery'),
+(29, 'a', 'a', '', '', 'asdsfdsfdfd', 'a', 'a', '', '2013-10-18 12:24:45', 'Charge on delivery'),
+(30, 'a', 'a', '', '', 'a', 'a', 'a', '', '2013-10-18 16:55:19', 'Charge on delivery'),
+(31, 'a', 's', '', '', 's', 'd', 'd', '', '2013-10-18 16:59:31', 'Charge on delivery');
 
 -- --------------------------------------------------------
 
@@ -174,7 +208,37 @@ CREATE TABLE IF NOT EXISTS `orders_cartitems` (
   `oc_order_id` int(11) NOT NULL,
   `oc_cart_id` int(11) NOT NULL,
   PRIMARY KEY (`oc_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+
+--
+-- Dumping data for table `orders_cartitems`
+--
+
+INSERT INTO `orders_cartitems` (`oc_id`, `oc_order_id`, `oc_cart_id`) VALUES
+(1, 13, 12),
+(2, 14, 12),
+(3, 15, 12),
+(4, 16, 13),
+(5, 16, 14),
+(6, 17, 15),
+(7, 17, 16),
+(8, 18, 17),
+(9, 18, 18),
+(10, 20, 19),
+(11, 20, 20),
+(12, 21, 21),
+(13, 21, 22),
+(14, 22, 23),
+(15, 23, 24),
+(16, 23, 25),
+(17, 24, 26),
+(18, 25, 27),
+(19, 25, 28),
+(20, 27, 29),
+(21, 29, 30),
+(22, 30, 31),
+(23, 31, 32),
+(24, 31, 34);
 
 -- --------------------------------------------------------
 
@@ -212,14 +276,7 @@ CREATE TABLE IF NOT EXISTS `shopping_carts` (
   `cart_quantity` int(11) NOT NULL DEFAULT '1',
   `cart_date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`cart_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
-
---
--- Dumping data for table `shopping_carts`
---
-
-INSERT INTO `shopping_carts` (`cart_id`, `cart_user_id`, `cart_bg_id`, `cart_quantity`, `cart_date_added`) VALUES
-(11, 1, 1, 1, '2013-10-17 16:37:24');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
