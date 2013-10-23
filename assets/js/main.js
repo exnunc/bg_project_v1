@@ -4,7 +4,16 @@ $(document).ready(function() {
     typeaheadForSearch();
     checkOnStock();
     blockCheckout();
-
+    
+    if ($.cookie("active")==="browse"){
+        $('.start').removeClass("active");
+        $('.browse').addClass("active");
+        $('#start').removeClass("active");
+        $('#browse').addClass("active");
+        
+    }
+        
+    
     $('#logout-btn').bind('click', signOut);
     $('.view-cart').bind('click', viewCart);
     $('.shop-btn').bind('click', addToCart);
@@ -13,7 +22,8 @@ $(document).ready(function() {
     $('.select-quantity').bind('change', updateQuantity);
     $('#checkout-btn').bind('click', checkoutStepOne);
     $('.back-btn').bind('click', goBack);
-
+    $('.allgames').bind('click',getAllGames)
+    $('.categories').bind('click',getCategories);
 
 });
 
@@ -33,7 +43,34 @@ var addToCart = function() {
 var checkoutStepOne = function() {
     ajaxCallRedirect($('#base-url').data('url')+'index.php/shopping_cart/checkout', {});
 };
+var getCategories=function(){
+    var i=$(this).data('id');
+    //console.log(i);
+    //$.post($('#base-url').data('url')+'index.php/home', {variable: i});
+    console.log($('#base-url').data('url')+'index.php/categories');
+    //$('.browse').addClass("active");
+    //$('.start').removeClass("active");
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        async: false,
+        cache: false,
+        url:$('#base-url').data('url')+'index.php/home/categories' ,
+        data:{'vari':i},
+        success: function(response) {
+            if (response) {
+                window.location = response.redirect;
+                $.cookie("active","browse");
+                
+            }
+        }
+    });
+    //ajaxCallRedirect($('#base-url').data('url')+'index.php/home/categories',{'vari': i});
+};
 
+var getAllGames=function(){
+    ajaxCallRedirect($('#base-url').data('url')+'index.php', {});
+};
 
 
 var checkOnStock = function() {
@@ -76,9 +113,7 @@ var emptyCart = function() {
 var updateQuantity = function() {
     ajaxCallRedirect($('#base-url').data('url')+'index.php/shopping_cart/update_quantity_manually/' + $(this).data('id'), {'newValue': $(this).val()});
 };
-var getCategory=function($id){
-    ajaxCallRedirect('home/browse',+$(this).bgames_cat);
-};
+
 
 var typeaheadForSearch = function() {
     $('#search-field').typeahead([{

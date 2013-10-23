@@ -6,14 +6,18 @@
             Categories <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="categories">
-            <li id="category1"><a href="#">Strategy Games</a></li>
-            <li id="category2"><a href="#">Card Games</a></li>
-            <li id="category3"><a href="#">Classic Games</a></li>
-            <li id="category4"><a href="#">Children's Games</a></li>
+            <li class="categories" data-id="1"><a href="#">Strategy Games</a></li>
+            <li class="categories" data-id="2"><a href="#">Card Games</a></li>
+            <li class="categories" data-id="3"><a href="#">Classic Games</a></li>
+            <li class="categories" data-id="4"><a href="#">Children's Games</a></li>
         </ul>
     </div>
+    
+    <div class="btn-group">
+  <button type="button" class="btn btn-default allgames">All Games</button>
+</div>
 
-   {bgames_cat}
+   {bg}
    <div class="media margine" >
         <a class="pull-left" href="#" >
             <img class="media-object tralala"  src="{path}" alt="...">
@@ -24,5 +28,5 @@
                 <p>{bg_description}</p>
         </div>
     </div>
-   {/bgames_cat}
+   {/bg}
 </div>
