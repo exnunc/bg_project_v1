@@ -5,14 +5,14 @@
             <!-- tabs left -->
             <div class="tabbable tabs-left">
                 <ul class="nav nav-tabs">
-                    <li class="start"><a class="start-panel"href="#start" data-toggle="tab">START</a></li>
+                    <li class="start"><a class="start-panel" href="#start" data-toggle="tab">START</a></li>
                     <li class="featured"><a href="#featured" data-toggle="tab">FEATURED</a></li>
                     <li class="top5"><a href="#top5" data-toggle="tab">TOP 5</a></li>
                     <li class="browse"><a class="browse-panel" href="#browse" data-toggle="tab">BROWSE</a></li>
     
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane active" id="start">
+                    <div class="tab-pane start" id="start">
                         <div class="row ">
                             <div class="well col-md-4 col-md-offset-4">
                                 Welcome, {name}

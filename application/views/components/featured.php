@@ -1,4 +1,4 @@
-<div class="tab-pane" id="featured">
+<div class="tab-pane featured" id="featured">
 
     <div class="row">
         <div class="col-md-12">

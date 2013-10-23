@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 21, 2013 at 10:00 AM
+-- Generation Time: Oct 23, 2013 at 10:29 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -48,8 +48,8 @@ CREATE TABLE IF NOT EXISTS `boardgames` (
 --
 
 INSERT INTO `boardgames` (`bg_id`, `bg_name`, `bg_image`, `bg_description`, `bg_stars_no`, `bg_times_voted`, `bg_min_players`, `bg_max_players`, `bg_price`, `bg_date_added`, `bg_stock`) VALUES
-(1, 'Settlers of Catan', 'catan1.jpg', 'Players are recent immigrants to the newly populated island of Catan. Expand your colony through the building of settlements, roads, and villages by harvesting commodities from the land around you. Trade sheep, lumber ,bricks and some grain for a settlement, bricks and wood for a road, or try to complete other combinations for more advanced buildings, services and specials. Trade with other players, or at local seaports to get resources you might lack. The first player to achieve 10 points from a combination of roads, settlements, and special cards wins.', 0, 0, 3, 6, 42, '0000-00-00 00:00:00', 12),
-(2, 'Carcassonne', 'carcassonne1.jpg', 'The game board is a medieval landscape built by the players as the game progresses. The game starts with a single terrain tile face up and 71 others shuffled face down for the players to draw from. On each turn a player draws a new terrain tile and places it adjacent to tiles that are already face up. The new tile must be placed in a way that extends features on the tiles it abuts: roads must connect to roads, fields to fields, and cities to cities.\r\n\r\n\r\nA part of a game board after several turns.\r\nAfter placing each new tile, the placing player may opt to station a piece (called a "follower") on a feature of that newly-placed tile. The placing player may not use a follower to claim any features of the tile that extend or connect features already claimed by another player. However, it is possible for terrain features claimed by opposing players to become "shared" by the subsequent placement of tiles connecting them. For example, two field tiles which each have a follower can become connected into a single field by another terrain tile.\r\nThe game ends when the last tile has been placed. At that time, all features (including fields) score points for the players with the most followers on them. The player with the most points wins the game.', 0, 0, 2, 6, 30, '0000-00-00 00:00:00', 5),
+(1, 'Settlers of Catan', 'catan1.jpg', 'Players are recent immigrants to the newly populated island of Catan. Expand your colony through the building of settlements, roads, and villages by harvesting commodities from the land around you. Trade sheep, lumber ,bricks and some grain for a settlement, bricks and wood for a road, or try to complete other combinations for more advanced buildings, services and specials. Trade with other players, or at local seaports to get resources you might lack. The first player to achieve 10 points from a combination of roads, settlements, and special cards wins.', 7, 2, 3, 6, 42, '0000-00-00 00:00:00', 12),
+(2, 'Carcassonne', 'carcassonne1.jpg', 'The game board is a medieval landscape built by the players as the game progresses. The game starts with a single terrain tile face up and 71 others shuffled face down for the players to draw from. On each turn a player draws a new terrain tile and places it adjacent to tiles that are already face up. The new tile must be placed in a way that extends features on the tiles it abuts: roads must connect to roads, fields to fields, and cities to cities.\r\n\r\n\r\nA part of a game board after several turns.\r\nAfter placing each new tile, the placing player may opt to station a piece (called a "follower") on a feature of that newly-placed tile. The placing player may not use a follower to claim any features of the tile that extend or connect features already claimed by another player. However, it is possible for terrain features claimed by opposing players to become "shared" by the subsequent placement of tiles connecting them. For example, two field tiles which each have a follower can become connected into a single field by another terrain tile.\r\nThe game ends when the last tile has been placed. At that time, all features (including fields) score points for the players with the most followers on them. The player with the most points wins the game.', 4, 1, 2, 6, 30, '0000-00-00 00:00:00', 5),
 (3, 'Monopoly', 'monopoly1.png', 'Monopoly is an American-originated board game originally published by Parker Brothers. Subtitled "The Fast-Dealing Property Trading Game," the game is named after the economic concept of monopoly — the domination of a market by a single entity. It is currently produced by the United States game and toy company Hasbro. Players move around the game board buying or trading properties, developing their properties with houses and hotels, and collecting rent from their opponents, the ultimate goal being to drive them into bankruptcy.', 0, 0, 2, 6, 14, '2013-10-14 09:58:20', 2),
 (4, 'Chess', 'chess1.jpg', 'Chess is a two-player strategy board game played on a chessboard, a checkered gameboard with 64 squares arranged in an eight-by-eight grid. It is one of the world''s most popular games, played by millions of people worldwide at home, in clubs, online, by correspondence, and in tournaments.\r\nEach player begins the game with 16 pieces: one king, one queen, two rooks, two knights, two bishops, and eight pawns. Each of the six piece types moves differently. Pieces are used to attack and capture the opponent''s pieces, with the objective to ''checkmate'' the opponent''s king by placing it under an inescapable threat of capture. In addition to checkmate, the game can be won by the voluntary resignation of the opponent, which typically occurs when too much material is lost, or if checkmate appears unavoidable. A game may also result in a draw in several ways, where neither player wins.', 0, 0, 2, 2, 18, '2013-10-14 10:00:04', 0),
 (5, 'Domino', 'domino1.jpg', 'Dominoes (or dominos) generally refers to the collective gaming pieces making up a domino set (sometimes called a deck or pack) or to the subcategory of tile games played with domino pieces. In the area of mathematical tilings and polyominoes, the word domino often refers to any rectangle formed from joining two congruent squares edge to edge. The traditional Sino-European domino set consists of 28 dominoes, colloquially nicknamed bones, cards, tiles, tickets, stones, or spinners. Each domino is a rectangular tile with a line dividing its face into two square ends. Each end is marked with a number of spots (also called pips or nips) or is blank. The backs of the dominoes in a set are indistinguishable, either blank or having some common design. A domino set is a generic gaming device, similar to playing cards or dice, in that a variety of games can be played with a set.', 0, 0, 2, 4, 17, '2013-10-14 10:01:12', 121),
@@ -62,7 +62,7 @@ INSERT INTO `boardgames` (`bg_id`, `bg_name`, `bg_image`, `bg_description`, `bg_
 (12, 'Candy Land', 'candyland1.jpg', 'Candy Land (also Candyland) is a simple racing board game. The game requires no reading and minimal counting skills, making it suitable for young children.\r\nDue to the design of the game, there is no strategy involved—players are never required to make choices, just follow directions. The winner is predetermined by the shuffle of the cards.', 0, 0, 2, 4, 12, '2013-10-14 10:18:23', 0),
 (13, 'Clue', 'clue1.jpg', 'The object of the game is for players to strategically move around the game board (representing the rooms of a mansion), in the guise of one of the game''s six characters, collecting clues from which to deduce which suspect murdered the game''s perpetual victim, Dr. Black (Mr. Boddy in North American versions), and with which weapon and in what room.\r\nNumerous games, books, and a film have been released as part of the Cluedo franchise. Several spinoffs games have been released featuring various extra characters, weapons and rooms, or different game play. The original and traditional format of the game is marketed as the "Classic Detective Game", while the various spinoffs are all distinguished by different slogans.', 0, 0, 3, 6, 14.5, '2013-10-14 10:22:36', 54),
 (14, 'Spy Alley', 'spyalley1.jpg', 'Spy Alley is a board game wherein each player secretly works for the spy agency of one of six countries. The players take turns moving around the board in an attempt to first gather the password, disguise, code book, and key corresponding to their country, and then reach their embassy, winning the game. But the player must beware, for any of one''s opponents may deduce and expose one''s nationality at any time, thus eliminating one from the game.', 0, 0, 2, 6, 6.5, '2013-10-14 10:25:20', 0),
-(15, 'Lost Cities', 'lostcities.jpg', 'Lost Cities is a fast-moving game, with players playing or discarding, and then replacing, a single card each turn. Cards represent progress on one of the five color-coded expeditions. Players must decide, during the course of the game, how many of these expeditions to actually embark upon. Card play rules are quite straightforward, but because players can only move forward on an expedition (by playing cards which are higher-numbered than those already played), making the right choice in a given game situation can be quite difficult. An expedition that has been started will earn points according to how much progress has been made when the game ends, and after three rounds, the player with the highest total score wins the game. Each expedition that is started but not thoroughly charted incurs a negative point penalty (investment costs).\r\nInteraction between players is indirect, in that one cannot directly impact another player''s expeditions. However, since players can draw from the common discard piles, they are free to make use of opposing discards. Additionally, since the available cards for a given expedition are finite, progress made by an opponent in a given color can lead to difficulty making progress in that same color.\r\nThe game''s board, while designed to supplement the theme, is optional and consists only of simple marked areas where players place discards. If Lost Cities had four expeditions instead of five, it could be played with a standard deck of playing cards. When doing so, the face cards would represent investment cards, with numbered cards two through ten serving as the expedition progress cards.', 0, 0, 2, 2, 17.6, '2013-10-14 10:26:38', 8),
+(15, 'Lost Cities', 'lostcities1.jpg', 'Lost Cities is a fast-moving game, with players playing or discarding, and then replacing, a single card each turn. Cards represent progress on one of the five color-coded expeditions. Players must decide, during the course of the game, how many of these expeditions to actually embark upon. Card play rules are quite straightforward, but because players can only move forward on an expedition (by playing cards which are higher-numbered than those already played), making the right choice in a given game situation can be quite difficult. An expedition that has been started will earn points according to how much progress has been made when the game ends, and after three rounds, the player with the highest total score wins the game. Each expedition that is started but not thoroughly charted incurs a negative point penalty (investment costs).\r\nInteraction between players is indirect, in that one cannot directly impact another player''s expeditions. However, since players can draw from the common discard piles, they are free to make use of opposing discards. Additionally, since the available cards for a given expedition are finite, progress made by an opponent in a given color can lead to difficulty making progress in that same color.\r\nThe game''s board, while designed to supplement the theme, is optional and consists only of simple marked areas where players place discards. If Lost Cities had four expeditions instead of five, it could be played with a standard deck of playing cards. When doing so, the face cards would represent investment cards, with numbered cards two through ten serving as the expedition progress cards.', 0, 0, 2, 2, 17.6, '2013-10-14 10:26:38', 8),
 (16, 'Camelot', 'camelot1.jpg', 'Camelot is a strategy board game for two players. One of the first games published by Parker Brothers, it was invented late in the 19th century by George S. Parker and originally published under the name Chivalry.\r\nThe game (reduced in size and number of pieces, and reissued as "Camelot" in 1930) flourished through dozens of editions and numerous variants, achieving its greatest popularity in the 1930s, but remained in print through the late 1960s. In the 1980s, Parker Brothers briefly republished the game under the name Inside Moves. Since then the game has been out of print, but retains a core of fans who look forward to another revival.\r\nCamelot is easily learned and without extensive praxis or theory, thus perhaps more accessible for novices to play and enjoy compared to either chess or checkers. The game is exceptionally tactical almost from the first move, and therefore quick to play to a conclusion.', 0, 0, 2, 2, 25, '2013-10-14 10:27:34', 4);
 
 -- --------------------------------------------------------
@@ -184,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `order_date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `order_payment` varchar(50) NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 --
 -- Dumping data for table `orders`
@@ -195,7 +195,8 @@ INSERT INTO `orders` (`order_id`, `order_firstname`, `order_lastname`, `order_em
 (28, 'a', 'a', '', '', 'asdsfdsfdfd', 'a', 'a', '', '2013-10-18 12:19:36', 'Charge on delivery'),
 (29, 'a', 'a', '', '', 'asdsfdsfdfd', 'a', 'a', '', '2013-10-18 12:24:45', 'Charge on delivery'),
 (30, 'a', 'a', '', '', 'a', 'a', 'a', '', '2013-10-18 16:55:19', 'Charge on delivery'),
-(31, 'a', 's', '', '', 's', 'd', 'd', '', '2013-10-18 16:59:31', 'Charge on delivery');
+(31, 'a', 's', '', '', 's', 'd', 'd', '', '2013-10-18 16:59:31', 'Charge on delivery'),
+(32, 'a', 'a', '', '', 'asdsfdsfdfd', 'a', 'a', '', '2013-10-22 08:08:05', 'Charge on delivery');
 
 -- --------------------------------------------------------
 
@@ -208,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `orders_cartitems` (
   `oc_order_id` int(11) NOT NULL,
   `oc_cart_id` int(11) NOT NULL,
   PRIMARY KEY (`oc_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `orders_cartitems`
@@ -238,7 +239,8 @@ INSERT INTO `orders_cartitems` (`oc_id`, `oc_order_id`, `oc_cart_id`) VALUES
 (21, 29, 30),
 (22, 30, 31),
 (23, 31, 32),
-(24, 31, 34);
+(24, 31, 34),
+(25, 32, 1);
 
 -- --------------------------------------------------------
 
@@ -276,7 +278,14 @@ CREATE TABLE IF NOT EXISTS `shopping_carts` (
   `cart_quantity` int(11) NOT NULL DEFAULT '1',
   `cart_date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`cart_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `shopping_carts`
+--
+
+INSERT INTO `shopping_carts` (`cart_id`, `cart_user_id`, `cart_bg_id`, `cart_quantity`, `cart_date_added`) VALUES
+(2, 1, 1, 1, '2013-10-22 12:56:51');
 
 -- --------------------------------------------------------
 

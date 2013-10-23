@@ -16,34 +16,31 @@ class Home extends CI_Controller {
             redirect('login');
         }
     }
+
     public function index() {
         $name = $this->login_model->get_name_by_username();
-        $bg=$this->boardgame_model->get_boardgames();
-        for ($i = 0; $i < count($bg); $i++){
-            $bg[$i]['path']=base_url().'assets/img/'.$bg[$i]['bg_image'];
+        $bg = $this->boardgame_model->get_boardgames();
+        for ($i = 0; $i < count($bg); $i++) {
+            $bg[$i]['path'] = base_url() . 'assets/img/' . $bg[$i]['bg_image'];
+        }
         $featured_bg = $this->boardgame_model->get_last_boardgame_added();
         $data = array(
             'test' => 'asdasda',
             'base_url' => base_url(),
             'v' => 'home',
             'name' => $name,
-            'bg'=>$bg,
+            'bg' => $bg,
             //'bg_path'=> base_url().'assets/img/'.$bg['bg_image']
-
             'featured_bg' => $featured_bg
-                
         );
 
         if ($this->check_session->check()) {
-            $data['menu'] = $this->parser->parse('components/menu',array('base_url'=>base_url()), true);
-            $data['featured'] = $this->parser->parse('components/featured', 
-                    array(
-                        'featured_bg_name'=>$featured_bg['bg_name'],
-                        'featured_bg_path'=>base_url() . 'assets/img/' . $featured_bg['bg_image'],
-                        'featured_bg_description'=>$featured_bg['bg_description'],
-                    
-                    ),
-                    true);
+            $data['menu'] = $this->parser->parse('components/menu', array('base_url' => base_url()), true);
+            $data['featured'] = $this->parser->parse('components/featured', array(
+                'featured_bg_name' => $featured_bg['bg_name'],
+                'featured_bg_path' => base_url() . 'assets/img/' . $featured_bg['bg_image'],
+                'featured_bg_description' => $featured_bg['bg_description'],
+                    ), true);
             $data['top5'] = $this->parser->parse('components/top5', array(), true);
             $data['browse'] = $this->parser->parse('components/browse', $data, true);
             $data['admin_dropdown'] = ' ';
@@ -56,8 +53,6 @@ class Home extends CI_Controller {
         else
             redirect('login');
     }
-    
-        }
 
     public function boardgames($id = FALSE) {
         if ($id === FALSE) {
@@ -75,24 +70,23 @@ class Home extends CI_Controller {
             echo json_encode($data);
         }
     }
-    
-    public function categories(){
-        
+
+    public function categories() {
+
         $i = $this->input->post('vari');
         $bg_id_list = $this->category_model->get_games_by_cat_id($i);
         $bgames_cat = array();
         for ($i = 0; $i < count($bg_id_list); $i++) {
             $var = $this->boardgame_model->get_boardgames($bg_id_list[$i]['bg_id']);
             array_push($bgames_cat, $var);
-            $bgames_cat[$i]['path']=base_url().'assets/img/'.$bgames_cat[$i]['bg_image'];
+            $bgames_cat[$i]['path'] = base_url() . 'assets/img/' . $bgames_cat[$i]['bg_image'];
         }
-        
-        $data=array(
-            'bgames_cat'=>$bgames_cat,
-            'redirect'=> base_url() . 'index.php'
+
+        $data = array(
+            'bgames_cat' => $bgames_cat,
+            'redirect' => base_url() . 'index.php'
         );
         echo json_encode($data);
-                
     }
 
     public function shopping_cart() {
@@ -114,5 +108,4 @@ class Home extends CI_Controller {
     }
 
 }
-
 ?>

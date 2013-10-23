@@ -6,14 +6,9 @@ $(document).ready(function() {
     typeaheadForSearch();
     checkOnStock();
     blockCheckout();
-    
-    if ($.cookie("active")==="browse"){
-        $('.start').removeClass("active");
-        $('.browse').addClass("active");
-        $('#start').removeClass("active");
-        $('#browse').addClass("active");
-        
-    }
+
+    setActivePanel();
+
     $('#logout-btn').bind('click', signOut);
     $('.view-cart').bind('click', viewCart);
     $('.shop-btn').bind('click', addToCart);
@@ -22,8 +17,8 @@ $(document).ready(function() {
     $('.select-quantity').bind('change', updateQuantity);
     $('#checkout-btn').bind('click', checkoutStepOne);
     $('.back-btn').bind('click', goBack);
-    $('.allgames').bind('click',getAllGames)
-    $('.categories').bind('click',getCategories);
+    $('.allgames').bind('click', getAllGames)
+    $('.categories').bind('click', getCategories);
 
     $('#save-new-meeting').bind('click', saveNewMeeting);
 
@@ -53,8 +48,8 @@ $.fn.starsVote = function() {
             var $span = $('<span/>').width(0);
             $(this).html($span);
         });
-        
-        $(this).click(function(e){
+
+        $(this).click(function(e) {
             var parentOffset = $(this).parent().offset();
             var relX = e.pageX - parentOffset.left;
 
@@ -62,6 +57,27 @@ $.fn.starsVote = function() {
             console.log(val);
         });
     });
+};
+
+var setActivePanel = function() {
+    console.log($.cookie("active"));
+    switch ($.cookie("active")) {
+        case 'browse':
+            $('.start').removeClass("active");
+            $('.featured').removeClass("active");
+            $('.top5').removeClass("active");
+            $('.browse').addClass("active");
+            break;
+
+        case 'start':
+            $('.browse').removeClass("active");
+            $('.featured').removeClass("active");
+            $('.top5').removeClass("active");
+            $('.start').addClass("active");
+            break;
+
+    }
+
 };
 
 var viewCart = function() {
@@ -76,33 +92,30 @@ var addToCart = function() {
 var checkoutStepOne = function() {
     ajaxCallRedirect($('#base-url').data('url') + 'index.php/shopping_cart/checkout', {});
 };
-var getCategories=function(){
-    var i=$(this).data('id');
-    //console.log(i);
-    //$.post($('#base-url').data('url')+'index.php/home', {variable: i});
-    console.log($('#base-url').data('url')+'index.php/categories');
-    //$('.browse').addClass("active");
-    //$('.start').removeClass("active");
+var getCategories = function() {
+    var i = $(this).data('id');
+    console.log($('#base-url').data('url') + 'index.php/categories');
+
     $.ajax({
         type: "POST",
         dataType: "json",
         async: false,
         cache: false,
-        url:$('#base-url').data('url')+'index.php/home/categories' ,
-        data:{'vari':i},
+        url: $('#base-url').data('url') + 'index.php/home/categories',
+        data: {'vari': i},
         success: function(response) {
             if (response) {
                 window.location = response.redirect;
-                $.cookie("active","browse");
-                
+                $.cookie("active", "browse");
+
             }
         }
     });
     //ajaxCallRedirect($('#base-url').data('url')+'index.php/home/categories',{'vari': i});
 };
 
-var getAllGames=function(){
-    ajaxCallRedirect($('#base-url').data('url')+'index.php', {});
+var getAllGames = function() {
+    ajaxCallRedirect($('#base-url').data('url') + 'index.php', {});
 };
 
 var saveNewMeeting = function() {
