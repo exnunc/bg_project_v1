@@ -6,6 +6,19 @@ $(document).ready(function() {
     typeaheadForSearch();
     checkOnStock();
     blockCheckout();
+<<<<<<< HEAD
+    
+    if ($.cookie("active")==="browse"){
+        $('.start').removeClass("active");
+        $('.browse').addClass("active");
+        $('#start').removeClass("active");
+        $('#browse').addClass("active");
+        
+    }
+        
+    
+=======
+>>>>>>> upstream/master
     $('#logout-btn').bind('click', signOut);
     $('.view-cart').bind('click', viewCart);
     $('.shop-btn').bind('click', addToCart);
@@ -14,7 +27,12 @@ $(document).ready(function() {
     $('.select-quantity').bind('change', updateQuantity);
     $('#checkout-btn').bind('click', checkoutStepOne);
     $('.back-btn').bind('click', goBack);
+<<<<<<< HEAD
+    $('.allgames').bind('click',getAllGames)
+    $('.categories').bind('click',getCategories);
+=======
     $('#save-new-meeting').bind('click', saveNewMeeting);
+>>>>>>> upstream/master
 
 });
 
@@ -65,7 +83,36 @@ var addToCart = function() {
 var checkoutStepOne = function() {
     ajaxCallRedirect($('#base-url').data('url') + 'index.php/shopping_cart/checkout', {});
 };
+var getCategories=function(){
+    var i=$(this).data('id');
+    //console.log(i);
+    //$.post($('#base-url').data('url')+'index.php/home', {variable: i});
+    console.log($('#base-url').data('url')+'index.php/categories');
+    //$('.browse').addClass("active");
+    //$('.start').removeClass("active");
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        async: false,
+        cache: false,
+        url:$('#base-url').data('url')+'index.php/home/categories' ,
+        data:{'vari':i},
+        success: function(response) {
+            if (response) {
+                window.location = response.redirect;
+                $.cookie("active","browse");
+                
+            }
+        }
+    });
+    //ajaxCallRedirect($('#base-url').data('url')+'index.php/home/categories',{'vari': i});
+};
 
+<<<<<<< HEAD
+var getAllGames=function(){
+    ajaxCallRedirect($('#base-url').data('url')+'index.php', {});
+};
+=======
 var saveNewMeeting = function() {
 
     if ($('#meet-time-id').val() !== '' && $('#meet-location').val() !== '') {
@@ -83,6 +130,7 @@ var saveNewMeeting = function() {
             remote: '#meetings-modal'
         });
     }
+>>>>>>> upstream/master
 
 };
 var checkOnStock = function() {
@@ -120,9 +168,14 @@ var emptyCart = function() {
 var updateQuantity = function() {
     ajaxCallRedirect($('#base-url').data('url') + 'index.php/shopping_cart/update_quantity_manually/' + $(this).data('id'), {'newValue': $(this).val()});
 };
+<<<<<<< HEAD
+
+
+=======
 var getCategory = function($id) {
     ajaxCallRedirect('home/browse', +$(this).bgames_cat);
 };
+>>>>>>> upstream/master
 var typeaheadForSearch = function() {
     $('#search-field').typeahead([{
             valueKey: 'name',
