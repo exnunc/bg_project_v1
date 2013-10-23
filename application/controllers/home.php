@@ -21,17 +21,7 @@ class Home extends CI_Controller {
         $bg=$this->boardgame_model->get_boardgames();
         for ($i = 0; $i < count($bg); $i++){
             $bg[$i]['path']=base_url().'assets/img/'.$bg[$i]['bg_image'];
-        $bg_id_list = $this->category_model->get_games_by_cat_id(1);
         $featured_bg = $this->boardgame_model->get_last_boardgame_added();
-       
-        $bgames_cat = array();
-        $bg_path=array();
-        for ($i = 0; $i < count($bg_id_list); $i++) {
-            $var = $this->boardgame_model->get_boardgames($bg_id_list[$i]['bg_id']);
-            array_push($bgames_cat, $var);
-            $bgames_cat[$i]['path']=base_url().'assets/img/'.$bgames_cat[$i]['bg_image'];
-        }
-        
         $data = array(
             'test' => 'asdasda',
             'base_url' => base_url(),
@@ -40,7 +30,6 @@ class Home extends CI_Controller {
             'bg'=>$bg,
             //'bg_path'=> base_url().'assets/img/'.$bg['bg_image']
 
-            'bgames_cat' => $bgames_cat,
             'featured_bg' => $featured_bg
                 
         );
