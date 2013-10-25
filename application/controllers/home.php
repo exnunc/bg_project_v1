@@ -86,7 +86,7 @@ class Home extends CI_Controller {
 
             $this->session->set_userdata($sesData);
             $data = array(
-                'redirect' => base_url()
+                'redirect' => base_url(). 'index.php/game'
             );
             echo json_encode($data);
         }
@@ -137,7 +137,7 @@ class Home extends CI_Controller {
         $this->session->sess_destroy();
 
         $data = array(
-            'redirect' => base_url() . 'index.php/game'
+            'redirect' => base_url() 
         );
         echo json_encode($data);
     }

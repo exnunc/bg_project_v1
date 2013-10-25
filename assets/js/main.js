@@ -179,7 +179,7 @@ var typeaheadForSearch = function() {
 
 
 
-        ajaxCallRedirect('home/boardgames/' + datum.id, {});
+        //ajaxCallRedirect('home/boardgames/' + datum.id, {});
         ajaxCallRedirect($('#base-url').data('url') + 'index.php/home/boardgames/' + datum.id, {});
     });
 };
