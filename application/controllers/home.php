@@ -48,9 +48,7 @@ class Home extends CI_Controller {
                 $bg_cat[$i]['path'] = $bg_images[$i];
                 $bg_cat[$i]['bg_description'] = $bg_ds[$i];
             }
-            //print_r($bg_cat);
             $sdata = array('bg_cat' => $bg_cat);
-            //print_r($sdata);
             $data['browse_by_cat'] = $this->parser->parse('components/browse_by_cat', $sdata, true);
         }
 
@@ -87,7 +85,7 @@ class Home extends CI_Controller {
 
             $this->session->set_userdata($sesData);
             $data = array(
-                'redirect' => base_url()
+                'redirect' => base_url(). 'index.php/game'
             );
             echo json_encode($data);
         }
@@ -120,7 +118,7 @@ class Home extends CI_Controller {
         //print_r($bg_titles);
 
         $this->session->set_userdata($sesData);
-        //$data['browse'] = $this->parser->parse('components/browse', $data, true);
+        //$data['browse_by_cat'] = $this->parser->parse('components/browse', $data, true);
         echo json_encode($data);
     }
 
@@ -137,7 +135,7 @@ class Home extends CI_Controller {
         $this->session->sess_destroy();
 
         $data = array(
-            'redirect' => base_url() . 'index.php/game'
+            'redirect' => base_url() 
         );
         echo json_encode($data);
     }
