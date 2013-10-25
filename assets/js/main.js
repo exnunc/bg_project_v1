@@ -78,22 +78,20 @@ var checkoutStepOne = function() {
 };
 var getCategories=function(){
     var i=$(this).data('id');
-    //console.log(i);
-    //$.post($('#base-url').data('url')+'index.php/home', {variable: i});
-    console.log($('#base-url').data('url')+'index.php/categories');
-    //$('.browse').addClass("active");
-    //$('.start').removeClass("active");
+    console.log(i);
     $.ajax({
         type: "POST",
         dataType: "json",
         async: false,
         cache: false,
-        url:$('#base-url').data('url')+'index.php/home/categories' ,
+        url:$('#base-url').data('url')+'index.php/home/categories',
         data:{'vari':i},
         success: function(response) {
             if (response) {
+                console.log('fsdf');
                 window.location = response.redirect;
                 $.cookie("active","browse");
+                
                 
             }
         }
