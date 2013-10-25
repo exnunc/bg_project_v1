@@ -1,5 +1,5 @@
 
-<div class="tab-pane" id="browse">
+<div class="tab-pane browse" id="browse">
     <!-- Single button -->
     <div class="btn-group">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">

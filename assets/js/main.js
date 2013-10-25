@@ -6,13 +6,13 @@ $(document).ready(function() {
     typeaheadForSearch();
     checkOnStock();
     blockCheckout();
-    
-    if ($.cookie("active")==="browse"){
+
+    if ($.cookie("active") === "browse") {
         $('.start').removeClass("active");
         $('.browse').addClass("active");
         $('#start').removeClass("active");
         $('#browse').addClass("active");
-        
+
     }
     $('#logout-btn').bind('click', signOut);
     $('.view-cart').bind('click', viewCart);
@@ -22,8 +22,8 @@ $(document).ready(function() {
     $('.select-quantity').bind('change', updateQuantity);
     $('#checkout-btn').bind('click', checkoutStepOne);
     $('.back-btn').bind('click', goBack);
-    $('.allgames').bind('click',getAllGames)
-    $('.categories').bind('click',getCategories);
+    $('.allgames').bind('click', getAllGames)
+    $('.categories').bind('click', getCategories);
 
     $('#save-new-meeting').bind('click', saveNewMeeting);
 
@@ -53,8 +53,8 @@ $.fn.starsVote = function() {
             var $span = $('<span/>').width(0);
             $(this).html($span);
         });
-        
-        $(this).click(function(e){
+
+        $(this).click(function(e) {
             var parentOffset = $(this).parent().offset();
             var relX = e.pageX - parentOffset.left;
 
@@ -76,31 +76,31 @@ var addToCart = function() {
 var checkoutStepOne = function() {
     ajaxCallRedirect($('#base-url').data('url') + 'index.php/shopping_cart/checkout', {});
 };
-var getCategories=function(){
-    var i=$(this).data('id');
+var getCategories = function() {
+    var i = $(this).data('id');
     console.log(i);
     $.ajax({
         type: "POST",
         dataType: "json",
         async: false,
         cache: false,
-        url:$('#base-url').data('url')+'index.php/home/categories',
-        data:{'vari':i},
+        url: $('#base-url').data('url') + 'index.php/home/categories',
+        data: {'vari': i},
         success: function(response) {
             if (response) {
                 console.log(response);
                 window.location = response.redirect;
-                $.cookie("active","browse");
-                
-                
+                $.cookie("active", "browse");
+
+
             }
         }
     });
     //ajaxCallRedirect($('#base-url').data('url')+'index.php/home/categories',{'vari': i});
 };
 
-var getAllGames=function(){
-    ajaxCallRedirect($('#base-url').data('url')+'index.php', {});
+var getAllGames = function() {
+    ajaxCallRedirect($('#base-url').data('url') + 'index.php', {});
 };
 
 var saveNewMeeting = function() {
