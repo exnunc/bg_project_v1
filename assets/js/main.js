@@ -7,8 +7,13 @@ $(document).ready(function() {
     checkOnStock();
     blockCheckout();
 
-    setActivePanel();
+    if ($.cookie("active") === "browse") {
+        $('.start').removeClass("active");
+        $('.browse').addClass("active");
+        $('#start').removeClass("active");
+        $('#browse').addClass("active");
 
+    }
     $('#logout-btn').bind('click', signOut);
     $('.view-cart').bind('click', viewCart);
     $('.shop-btn').bind('click', addToCart);
@@ -59,27 +64,6 @@ $.fn.starsVote = function() {
     });
 };
 
-var setActivePanel = function() {
-    console.log($.cookie("active"));
-    switch ($.cookie("active")) {
-        case 'browse':
-            $('.start').removeClass("active");
-            $('.featured').removeClass("active");
-            $('.top5').removeClass("active");
-            $('.browse').addClass("active");
-            break;
-
-        case 'start':
-            $('.browse').removeClass("active");
-            $('.featured').removeClass("active");
-            $('.top5').removeClass("active");
-            $('.start').addClass("active");
-            break;
-
-    }
-
-};
-
 var viewCart = function() {
     ajaxCallRedirect($('#base-url').data('url') + 'index.php/home/shopping_cart', {});
 };
@@ -94,8 +78,7 @@ var checkoutStepOne = function() {
 };
 var getCategories = function() {
     var i = $(this).data('id');
-    console.log($('#base-url').data('url') + 'index.php/categories');
-
+    console.log(i);
     $.ajax({
         type: "POST",
         dataType: "json",
@@ -105,8 +88,10 @@ var getCategories = function() {
         data: {'vari': i},
         success: function(response) {
             if (response) {
+                console.log(response);
                 window.location = response.redirect;
                 $.cookie("active", "browse");
+
 
             }
         }
