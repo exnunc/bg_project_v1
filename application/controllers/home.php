@@ -34,7 +34,8 @@ class Home extends CI_Controller {
             //'bg_path'=> base_url().'assets/img/'.$bg['bg_image']
             'featured_bg' => $featured_bg
         );
-        if ($this->session->userdata('bg_by_cat_titles') == '') {
+        
+        if ($this->session->userdata('bg_by_cat_titles') == ' ') {
             $data['browse_by_cat'] = ' ';
             
         } else {
@@ -108,7 +109,7 @@ class Home extends CI_Controller {
             $bg_descriptions[$i] = $bgames_cat[$i]['bg_description'];
         };
         $data = array(
-            'redirect' => base_url().'index.php/shopping_cart'
+            'redirect' => base_url().'index.php'
         );
 
         $sesData = array(
@@ -119,8 +120,7 @@ class Home extends CI_Controller {
         //print_r($bg_titles);
 
         $this->session->set_userdata($sesData);
-        print_r($this->session->userdata('bg_by_cat_titles'));
-        $data['browse'] = $this->parser->parse('components/browse', $data, true);
+        //$data['browse'] = $this->parser->parse('components/browse', $data, true);
         echo json_encode($data);
     }
 
