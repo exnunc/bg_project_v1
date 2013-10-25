@@ -88,7 +88,7 @@ var getCategories=function(){
         data:{'vari':i},
         success: function(response) {
             if (response) {
-                console.log('fsdf');
+                console.log(response);
                 window.location = response.redirect;
                 $.cookie("active","browse");
                 

@@ -108,7 +108,7 @@ class Home extends CI_Controller {
             $bg_descriptions[$i] = $bgames_cat[$i]['bg_description'];
         };
         $data = array(
-            'redirect' => base_url() . 'index.php'
+            'redirect' => base_url().'index.php/shopping_cart'
         );
 
         $sesData = array(
@@ -116,10 +116,11 @@ class Home extends CI_Controller {
             'bg_by_cat_images' => $bg_images,
             'bg_by_cat_descriptions' => $bg_descriptions
         );
-        print_r($bg_titles);
+        //print_r($bg_titles);
 
         $this->session->set_userdata($sesData);
-        //$data['browse'] = $this->parser->parse('components/browse', $data, true);
+        print_r($this->session->userdata('bg_by_cat_titles'));
+        $data['browse'] = $this->parser->parse('components/browse', $data, true);
         echo json_encode($data);
     }
 
