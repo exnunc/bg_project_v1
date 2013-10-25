@@ -118,12 +118,12 @@ class Home extends CI_Controller {
         //print_r($bg_titles);
 
         $this->session->set_userdata($sesData);
-<<<<<<< HEAD
+
         //$data['browse_by_cat'] = $this->parser->parse('components/browse', $data, true);
-=======
+
         
         $data['browse'] = $this->parser->parse('components/browse', $data, true);
->>>>>>> .
+
         echo json_encode($data);
     }
 
